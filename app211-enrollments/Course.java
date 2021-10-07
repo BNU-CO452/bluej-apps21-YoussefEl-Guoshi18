@@ -39,10 +39,9 @@ public class Course
         System.out.println();
     }
     
-    public void printCourse()
+    public void printModule()
     {
-        System.out.println("Course title: " + title + ":" + module);
-        System.out.println();
+        module.print();
     }
     
     public void addModule(Module module)
