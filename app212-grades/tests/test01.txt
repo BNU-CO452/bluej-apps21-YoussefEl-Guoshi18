@@ -1,0 +1,32 @@
+Student youssef = new Student("Youssef", 22133675);
+youssef.print();
+ Student ID: 22133675, Youssef
+Course gamesDevelopment = new Course("BT1GDV1", "BSc Games Development");
+youssef.enrol(gamesDevelopment);
+youssef.printCourse();
+ Student ID: 22133675, Youssef
+
+ Course BT1GDV1: BSc Games Development
+
+Module programmingConcepts = new Module("CO452", "Programming Concepts");
+gamesDevelopment.addModule(programmingConcepts);
+ModuleMark programmingMark = new ModuleMark(programmingConcepts);
+programmingMark.setMark(80);
+youssef.addMark(programmingMark);
+youssef.printTranscript();
+ ------------------------------------
+ App21-02: Exam Board Transcript 2021
+        by student name
+ ------------------------------------
+ Student ID: 22133675, Youssef
+
+ Course BT1GDV1: BSc Games Development
+
+
+
+ ---- 	 -------------------- 	 ------	 ---- 	 -----
+ Code 	 Module 		Credit	 Mark 	 Grade
+ ---- 	 -------------------- 	 ------	 ---- 	 -----
+
+
+ No Final Course Grade Yet!
