@@ -4,16 +4,16 @@ import java.util.*;
  * This class contains information about an undergraduate course
  * at BNU together with a list of student who are enrolled
  *
- * @author Derek Peacock
- * @version 1.0 14/07/2021
+ * @author Youssef El-Guoshi
+ * @version 19/10/2021
  */
 public class Course
 {
     // A unique identifier e.g. BT1CTG1
     private String code;
-    // The full title including qualification and subject
+    // The full title including qualification and subject.
     private String title;
-    
+    // To add the module to the course.
     private Module module;
     
     /**
@@ -39,11 +39,16 @@ public class Course
         System.out.println();
     }
     
+    /**
+     * Prints out the detail of the module.
+     */
     public void printModule()
     {
         module.print();
     }
-    
+    /**
+     * Adds a module.
+     */
     public void addModule(Module module)
     {
         this.module = module;
