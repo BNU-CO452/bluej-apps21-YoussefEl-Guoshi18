@@ -23,9 +23,9 @@ public class Module
        this.title = title;
        credit = 0;
     }
-/**
- * Gets the code of the module.
- */
+    /**
+    * Gets the code of the module.
+    */
     public String getCode()
     {
         return code;
