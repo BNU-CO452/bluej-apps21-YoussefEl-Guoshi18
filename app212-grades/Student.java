@@ -4,8 +4,8 @@ import java.util.*;
  * It holds the student details relevant in our context.
  * 
  * @author Michael Kölling and David Barnes
- * Modified by Derek Peacock & Nicholas Day
- * @version 2021-08-18
+ * Modified by Youssef El-Guoshi
+ * @version 26/10/2021
  */
 public class Student
 {
@@ -24,7 +24,7 @@ public class Student
      */
     public Student()
     {
-        this("Derek", 12345678);
+        this("Youssef", 22133675);
     }
     
     /**
@@ -104,7 +104,10 @@ public class Student
     
     private void printModules()
     {
-
+     for(ModuleMark moduleMark:marks)
+     {
+         moduleMark.print();
+     }
     }
     
     public void printTranscript()
@@ -122,6 +125,7 @@ public class Student
         System.out.println(" Code \t Module \t\tCredit\t Mark \t Grade");
         System.out.println(" ---- \t -------------------- \t ------\t ---- \t -----");
         
+        printModules();
        
         Grades finalGrade = course.calculateGrade(marks);
         

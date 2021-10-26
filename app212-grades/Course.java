@@ -3,8 +3,8 @@ import java.util.ArrayList;
  * This class stores information about a course
  * that enrolled students may want to complete
  *
- * @author Derek Peacock and Nicholas Day
- * @version 0.1 11/Sep/2020
+ * @author Youssef El-Guoshi
+ * @version 26/10/2021
  */
 public class Course
 {
@@ -19,7 +19,7 @@ public class Course
      
     public Course()
     {
-        this("G400", "BSc Computing");
+        this("BT1GDV1", "BSc Games Development");
     }
     
     /**
@@ -43,7 +43,7 @@ public class Course
      */
     public void createModules()
     {
-
+    
     }
     
     public void addModule(Module module)
@@ -59,7 +59,18 @@ public class Course
      */
     public Grades convertToGrade(int mark)
     {
-        return Grades.NS;
+        if (mark >= 0  && mark <= 39)
+          return Grades.F;
+        else if (mark >= 40 && mark <= 49)
+          return Grades.D;
+        else if (mark >= 50 && mark <= 59)
+          return Grades.C;
+        else if (mark >= 60 && mark <= 69)
+          return Grades.B;
+        else if (mark >= 70 && mark <= 100)
+          return Grades.A;
+        else
+          return Grades.NS;
     }
     
     /**
@@ -68,6 +79,13 @@ public class Course
      */
     public Grades calculateGrade(ArrayList<ModuleMark> marks)
     {
+        int total = 0;
+        int finalMark = 0;
+        for(ModuleMark mark: marks)
+        {
+            total = total + mark.getValue();
+        }
+        finalMark = total / MAXN_MODULES;
         return Grades.NS;
     }
     
@@ -89,6 +107,10 @@ public class Course
      */
     public void printModules()
     {
-        System.out.println();
+        for(Module module : modules)
+        {
+            module.print();
+            module.printCredit();
+        }
     }
 }
