@@ -1,0 +1,31 @@
+Student youssef = new Student();
+Course gameDev = new Course();
+youssef.enrol(gameDev);
+youssef.printTranscript();
+ ------------------------------------
+ App21-02: Exam Board Transcript 2021
+        by student name
+ ------------------------------------
+ Student ID: 22133675, Youssef
+
+ Course BT1GDV1: BSc Games Development
+
+ CO452: 	Programming Concepts   	  15 credits
+ CO450: 	Computer Architectures	  15 credits
+ CO461: 	3D Modelling          	  15 credits
+ CO459: 	Game Design           	  15 credits
+
+ ---- 	 -------------------- 	 ------	 ---- 	 -----
+ Code 	 Module 		Credit	 Mark 	 Grade
+ ---- 	 -------------------- 	 ------	 ---- 	 -----
+
+ CO452: 	Programming Concepts   	  15	80	A
+
+ CO450: 	Computer Architectures	  15	70	A
+
+ CO461: 	3D Modelling          	  15	60	B
+
+ CO459: 	Game Design           	  15	50	C
+
+
+ Final Course Grade = B
