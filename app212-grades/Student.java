@@ -6,6 +6,10 @@ import java.util.*;
  * @author Youssef El-Guoshi
  * @version 26/10/2021
  */
+/**
+ * A class "Student" contains attributes like int id, String name and Course course which provides information about the object
+ * of that class. And it also contain an ArrayList "marks" which can store "ModuleMark".
+ */
 public class Student
 {
     // the student ID
@@ -36,7 +40,9 @@ public class Student
         
         marks = new ArrayList<ModuleMark>();
     }
-
+    /**
+     * Adds the ModuleMark "mark" into the ArrayList "marks".
+     */
     public void addMark(ModuleMark mark)
     {
         marks.add(mark);
@@ -111,13 +117,17 @@ public class Student
     {
         System.out.println(" Student ID: " + id + ", " + name);
     }
-    
+    /**
+     * Prints the details of the Student's id and name and the course's code and title which the student is enrolled from.
+     */
     public void printCourse()
     {
         this.print();
         course.print();
     }
-    
+    /**
+     * Using the foreach statement for every "moduleMark" in the ArrayList "marks" convert into the grade for each module.
+     */
     private void printModules()
     {
      for(ModuleMark moduleMark: marks)
@@ -126,7 +136,9 @@ public class Student
          System.out.println("\t" + course.convertToGrade(moduleMark.getValue()));
      }
     }
-    
+    /**
+     * Prints the entire transcript that contains a grade for each module and the final grades that links to the four modules.
+     */
     public void printTranscript()
     {
         System.out.println(" ------------------------------------");

@@ -24,13 +24,17 @@ public class Module
         this.title = title;
     }
 
-   
+   /**
+    *  A getter method that returns the code value.
+    */
     public String getCode()
     {
         return code;
     }
     
-    
+    /**
+    *  A getter method that returns the title value.
+    */
     public String getTitle()
     {
         return title;

@@ -6,6 +6,11 @@ import java.util.ArrayList;
  * @author Youssef El-Guoshi
  * @version 26/10/2021
  */
+/**
+ * Class "course" that has attributes, MAXN_MODULES has a value "4" which can't be changed since it contains "final" in its data type. Arraylist "modules"
+ * thats takes in the object of the class "Module" and store into an array. String code and title provides information about the object of this class.
+ * Grades finalGrade will give the student the overall grade across the four modules.
+ */
 public class Course
 {
     public final static int MAXN_MODULES = 4;
@@ -17,6 +22,10 @@ public class Course
     
     private Grades finalGrade;
      
+/**
+ * Its a automation, that will immediately assign the course's code and title to "BT1GDV1", "BSc Games Development". Which then creates a new array list
+ * for that course and start another automation using the method createModules().
+ */
     public Course()
     {
         this("BT1GDV1", "BSc Games Development");
@@ -24,9 +33,9 @@ public class Course
         createModules();
     }
     
-    /**
-     * Constructor for objects of class Course
-     */
+/**
+ * Constructor for objects of class Course
+ */
     public Course(String code, String title)
     {
         // initialise instance variables
@@ -38,11 +47,9 @@ public class Course
         createModules();
     }
 
-    /**
-     * Create four modules and add them to the
-     * modules list for testing purposes.  These
-     * must be your four modules.
-     */
+/**
+ * It's an automation. Add the four modules into the Arraylist modules.
+ */
     public void createModules()
     {
     Module co452 = new Module("CO452","Programming Concepts   ");
@@ -55,7 +62,9 @@ public class Course
     addModule(co461);
     addModule(co459);
     }
-    
+/**
+ * This method checks to see if the size of the ArrayList is less then four before adding the module into the ArrayList.
+ */
     public void addModule(Module module)
     {
         if(modules.size() < MAXN_MODULES)
@@ -64,9 +73,10 @@ public class Course
         }
     }
     
-    /**
-     * 
-     */
+/**
+ * A group of if statements to checks to see if the mark is greater or equal to the low boundaries and if the mark is less than or equal
+ * to the upper boundaries if its true the grade will be assigned or else it'll move down to each statement until the condition is reached.
+ */
     public Grades convertToGrade(int mark)
     {
         if (mark >= 0  && mark <= 39)
