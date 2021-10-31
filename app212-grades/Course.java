@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * that enrolled students may want to complete
  *
  * @author Youssef El-Guoshi
- * @version 26/10/2021
+ * @version 31/10/2021
  */
 /**
  * Class "course" that has attributes, MAXN_MODULES has a value "4" which can't be changed since it contains "final" in its data type. Arraylist "modules"
@@ -16,7 +16,7 @@ public class Course
     public final static int MAXN_MODULES = 4;
     
     public ArrayList<Module> modules;
-    
+    public ArrayList<Student> students;
     private String code;
     private String title;
     
@@ -30,6 +30,7 @@ public class Course
     {
         this("BT1GDV1", "BSc Games Development");
          modules  = new ArrayList<Module>();
+         students = new ArrayList<Student>();
         createModules();
     }
     
@@ -62,6 +63,12 @@ public class Course
     addModule(co461);
     addModule(co459);
     }
+    
+    public void addStudent(Student student)
+    {
+        students.add(student);
+    }
+    
 /**
  * This method checks to see if the size of the ArrayList is less then four before adding the module into the ArrayList.
  */
@@ -123,7 +130,14 @@ public class Course
         
         printModules();
     }
-    
+      public void printCourseEnrol()
+    {
+        System.out.println("Lists of student thats has enrolled for Games Development");
+        for(Student student: students)
+        {
+            student.print();
+        }
+    }
     /**
      * Print the course's four modules
      */

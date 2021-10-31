@@ -30,3 +30,19 @@ youssef.printTranscript();
 
 
  No Final Course Grade Yet!
+
+Course gameDev = new Course();
+Student youssef = new Student();
+Student kyle = new Student("Kyle", 13246641);
+Student sam = new Student("Sam", 22314431);
+Student ali = new Student("Ali", 67291230);
+gameDev.addStudent(youssef);
+gameDev.addStudent(kyle);
+gameDev.addStudent(sam);
+gameDev.addStudent(ali);
+gameDev.printCourseEnrol();
+Lists of student thats has enrolled for Games Development
+ Student ID: 22133675, Youssef
+ Student ID: 13246641, Kyle
+ Student ID: 22314431, Sam
+ Student ID: 67291230, Ali

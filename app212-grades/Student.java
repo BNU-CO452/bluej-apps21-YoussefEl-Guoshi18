@@ -21,6 +21,8 @@ public class Student
     // The marks awarded for the modules on the course
     private ArrayList<ModuleMark> marks;
     
+
+    
     /**
      * This constructor creates a new student with a
      * fixed name and id. 
