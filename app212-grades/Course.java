@@ -63,7 +63,9 @@ public class Course
     addModule(co461);
     addModule(co459);
     }
-    
+/**
+ * Adds the student into the list that got enrolled into the course.
+ */    
     public void addStudent(Student student)
     {
         students.add(student);
@@ -130,6 +132,9 @@ public class Course
         
         printModules();
     }
+/**
+ * Prints out the list of student that got enrolled to the same course.
+ */
       public void printCourseEnrol()
     {
         System.out.println("Lists of student thats has enrolled for Games Development");
@@ -138,9 +143,9 @@ public class Course
             student.print();
         }
     }
-    /**
-     * Print the course's four modules
-     */
+/**
+ * Print the course's four modules
+ */
     public void printModules()
     {
         for(Module module : modules)
