@@ -82,7 +82,7 @@ public class Student
      */
     public void awardTestMarks()
     {
-        int randValue = 80;
+        int randValue = 60;
         for(Module module : course.modules)
       {
        ModuleMark mark = new ModuleMark(module);
