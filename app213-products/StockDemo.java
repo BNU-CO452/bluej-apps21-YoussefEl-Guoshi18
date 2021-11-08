@@ -18,14 +18,22 @@ public class StockDemo
      */
     public StockDemo(StockList stock)
     {
-        this.stock = stock;
+        this.stock = new StockList();
         
         // Add at least 10 products, they must be unique to you
         // Make sure the ids are sequential numbers
         
-        stock.add(new Product(101, "Samsung Galaxy S20"));
-        stock.add(new Product(102, "Apple iPhone 12"));
-        stock.add(new Product(103, "Google Pixel 4A"));
+        stock.add(new Product(1, "Dead by Daylight"));
+        stock.add(new Product(2, "Slay the Spire"));
+        stock.add(new Product(3, "Dying Light"));
+        stock.add(new Product(4, "Inscryption"));
+        stock.add(new Product(5, "PAYDAY 2"));
+        stock.add(new Product(6, "Risk of Rain 2"));
+        stock.add(new Product(7, "Phasmophobia"));
+        stock.add(new Product(8, "MORDHAU"));
+        stock.add(new Product(9, "Unturned"));
+        stock.add(new Product(10, "DOOM Eternal"));
+        runDemo();
     }
     
     /**
@@ -45,14 +53,16 @@ public class StockDemo
         stock.print();        
 
         sellProducts();
-        stock.print();        
+        stock.print();     
     }
     
     private void buyProducts()
     {
+        stock.buyProduct(101, 500);
     }
 
     private void sellProducts()
     {
+        stock.sellProduct(101,300);
     }    
 }

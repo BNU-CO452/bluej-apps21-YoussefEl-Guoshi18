@@ -46,6 +46,24 @@ public class StockList
      */
     public void buyProduct(int productID, int amount)
     {
+        Product product = findProduct(productID);
+        if(product != null) 
+        {
+            if(product.getQuantity() < 1000)
+            {
+                product.increaseQuantity(amount);
+                
+                System.out.println("Product bought!");
+            }
+            else
+            {
+                System.out.println("There is no product to buy!");
+            }
+        }
+        else
+        {
+            System.out.println("Product not found.");
+        }
     }
     
     /**
@@ -54,35 +72,50 @@ public class StockList
      */
     public Product findProduct(int productID)
     {
+        for(Product product : stock)
+        {
+            if(product.getID() == productID)
+            {
+                return product;
+            }
+        }
         return null;
     }
     
+    public void sellProduct(int productID)
+    {
+        sellProduct(productID, 1);
+    }
     
     /**
      * Sell one of the given product.
      * Show the before and after status of the product.
      * @param id The ID of the product being sold.
      */
-    public void sellProduct(int productID)
+    public void sellProduct(int productID, int amount)
     {
         Product product = findProduct(productID);
         
         if(product != null) 
         {
-            if(product.getQuantity() > 0)
+            if(product.getQuantity() > 0 && product.getQuantity() > amount)
             {
-                product.decreaseQuantity(1);
+                product.decreaseQuantity(amount);
                 
-                // printout message
+                System.out.println("Product sold!");
+            }
+            else if(product.getQuantity() == 0)
+            {
+                System.out.println("There is no product to sell!");
             }
             else
             {
-                // printout message
+                System.out.println("Can't sell the amount of that product!");
             }
         }
         else
         {
-            // printout message
+            System.out.println("Product not found.");
         }
     }    
 
@@ -133,7 +166,7 @@ public class StockList
     public void printHeading()
     {
         System.out.println();
-        System.out.println(" Peacock's Stock List");
+        System.out.println(" El-Guoshi's Stock List");
         System.out.println(" ====================");
         System.out.println();
     }
