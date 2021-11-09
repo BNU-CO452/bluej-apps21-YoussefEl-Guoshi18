@@ -35,7 +35,7 @@ public class StockDemo
         stock.add(new Product(108, "Risk of Rain 2"));
         stock.add(new Product(109, "Unturned"));
         stock.add(new Product(110, "Splitgate"));
-        
+        runDemo();
     }
     
     /**
@@ -56,14 +56,12 @@ public class StockDemo
         sellProducts();
         //removeProducts();
         stock.print();
-        
-        //lowProducts();
-        //stock.print();
+        checkStock();
     }
     
     private void buyProducts()
     {
-        for(int i = 101; i <= 110; i++ )
+        for(int i = 101; i <= 110; i++)
         {
         stock.buyProduct(i, random.nextInt(2000));
         }
@@ -71,21 +69,27 @@ public class StockDemo
     
      private void sellProducts()
     {
-        for(int i = 101; i <= 110; i++ )
+        for(int i = 101; i <= 110; i++)
         {
         stock.sellProduct(i, random.nextInt(2000));
         }
     } 
+    
+    private void checkStock()
+    {
+        stock.lowPrint();    
+    }
+    
+    public void searchName(String name)
+    {
+        stock.printName(name);
+    }
     
     private void removeProducts()
     {
         stock.removeProduct(110);
     }
     
-    private void lowProducts()
-    {
-        for(int i = 101; i <= 110; i++)
-       lowStock.checkLowProduct(i);  
-    }
+
         
 }

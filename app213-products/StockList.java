@@ -140,16 +140,6 @@ public class StockList
         stock.remove(product);
     }
     
-    
-     public void checkLowProduct(int productID)
-    {
-        Product product = findProduct(productID);
-        if(product.getQuantity() < 1000)
-        {
-            add(product);
-        }
-    }
-    
     /**
      * Print details of the given product. If found,
      * its name and stock quantity will be shown.
@@ -181,6 +171,37 @@ public class StockList
         System.out.println();
     }
     
+     public void lowPrint()
+    {
+        printStock();
+        
+        for(Product product : stock)
+        {
+            if(product.getQuantity() < 500)
+            {
+            System.out.println(product);
+            }
+        }
+
+        System.out.println();
+    }
+    
+      public void printName(String name)
+    {
+        printNameHeading();
+        
+        for(Product product : stock)
+        {
+            if(product.getName() == name)
+            {
+            System.out.println(product);
+            }
+        }
+        
+
+        System.out.println();
+    }
+    
     public void printHeading()
     {
         System.out.println();
@@ -188,4 +209,21 @@ public class StockList
         System.out.println(" ====================");
         System.out.println();
     }
+    
+    public void printStock()
+    {
+        System.out.println();
+        System.out.println(" OH NO looks like these products are in low stocks!");
+        System.out.println(" =========================================");
+        System.out.println();
+    }
+    
+        public void printNameHeading()
+    {
+        System.out.println();
+        System.out.println(" Result found!");
+        System.out.println(" =================");
+        System.out.println();
+    }
 }
+
