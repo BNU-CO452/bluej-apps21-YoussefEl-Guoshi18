@@ -11,6 +11,7 @@ public class StockList
 {
     // A list of the products.
     private ArrayList<Product> stock;
+    //private ArrayList<Product> lowStock;
 
     /**
      * Initialise the stock manager.
@@ -18,6 +19,7 @@ public class StockList
     public StockList()
     {
         stock = new ArrayList<Product>();
+        //lowStock = new ArrayList<Product>();
     }
 
     /**
@@ -53,7 +55,7 @@ public class StockList
             {
                 product.increaseQuantity(amount);
                 
-                System.out.println("Product bought!");
+                System.out.println(product.getName() + " is increased by " + amount + "!");
             }
             else
             {
@@ -102,15 +104,15 @@ public class StockList
             {
                 product.decreaseQuantity(amount);
                 
-                System.out.println("Product sold!");
+                System.out.println(product.getName() + " has "+ amount + " product sold!");
             }
             else if(product.getQuantity() == 0)
             {
-                System.out.println("There is no product to sell!");
+                System.out.println("There is no product for "+ product.getName() + "to sell!");
             }
             else
             {
-                System.out.println("Can't sell the amount of that product!");
+                System.out.println("Can't sell the amount of " + product.getName() + "!");
             }
         }
         else
@@ -131,7 +133,23 @@ public class StockList
     {
         return 0;
     }
-
+    
+    public void removeProduct(int productID)
+    {
+        Product product = findProduct(productID);
+        stock.remove(product);
+    }
+    
+    
+     public void checkLowProduct(int productID)
+    {
+        Product product = findProduct(productID);
+        if(product.getQuantity() < 1000)
+        {
+            add(product);
+        }
+    }
+    
     /**
      * Print details of the given product. If found,
      * its name and stock quantity will be shown.

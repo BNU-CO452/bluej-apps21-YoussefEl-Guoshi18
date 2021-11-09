@@ -1,4 +1,4 @@
-
+import java.util.Random;
 /**
  * Demonstrate the StockManager and Product classes.
  * The demonstration becomes properly functional as
@@ -11,6 +11,9 @@ public class StockDemo
 {
     // The stock manager.
     private StockList stock;
+    private StockList lowStock;
+    
+    private Random random;
 
     /**
      * Create a StockManager and populate it with at least
@@ -19,10 +22,9 @@ public class StockDemo
     public StockDemo(StockList stock)
     {
         this.stock = stock;
-        
+        this.random = new Random();
         // Add at least 10 products, they must be unique to you
         // Make sure the ids are sequential numbers
-        
         stock.add(new Product(101, "Dying Light"));
         stock.add(new Product(102, "Slay the Spire"));
         stock.add(new Product(103, "Dead by Daylight"));
@@ -33,7 +35,7 @@ public class StockDemo
         stock.add(new Product(108, "Risk of Rain 2"));
         stock.add(new Product(109, "Unturned"));
         stock.add(new Product(110, "Splitgate"));
-        runDemo();
+        
     }
     
     /**
@@ -48,21 +50,42 @@ public class StockDemo
         // Show details of all of the products before delivery.
         
         stock.print();
-
         buyProducts();
         stock.print();        
 
         sellProducts();
-        stock.print();        
+        //removeProducts();
+        stock.print();
+        
+        //lowProducts();
+        //stock.print();
     }
     
     private void buyProducts()
     {
-        stock.buyProduct(101, 500);
+        for(int i = 101; i <= 110; i++ )
+        {
+        stock.buyProduct(i, random.nextInt(2000));
+        }
     }
-
-    private void sellProducts()
+    
+     private void sellProducts()
     {
-        stock.sellProduct(101,300);
-    }    
+        for(int i = 101; i <= 110; i++ )
+        {
+        stock.sellProduct(i, random.nextInt(2000));
+        }
+    } 
+    
+    private void removeProducts()
+    {
+        stock.removeProduct(110);
+    }
+    
+    private void lowProducts()
+    {
+        for(int i = 101; i <= 110; i++)
+       lowStock.checkLowProduct(i);  
+    }
+        
 }

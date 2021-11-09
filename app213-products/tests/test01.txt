@@ -1,0 +1,90 @@
+StockList gameStore = new StockList();
+StockDemo stockDem1 = new StockDemo(gameStore);
+stockDem1.runDemo();
+
+ El-Guoshi's Stock List
+ ====================
+
+ ID 101: Dying Light stock level: 0
+ ID 102: Slay the Spire stock level: 0
+ ID 103: Dead by Daylight stock level: 0
+ ID 104: Inscryption stock level: 0
+ ID 105: DOOM Eternal stock level: 0
+ ID 106: MORDHAU stock level: 0
+ ID 107: PAYDAY 2 stock level: 0
+ ID 108: Risk of Rain 2 stock level: 0
+ ID 109: Unturned stock level: 0
+ ID 110: Splitgate stock level: 0
+
+Dying Light is increased by 1736!
+Slay the Spire is increased by 1917!
+Dead by Daylight is increased by 722!
+Inscryption is increased by 151!
+DOOM Eternal is increased by 1185!
+MORDHAU is increased by 73!
+PAYDAY 2 is increased by 1988!
+Risk of Rain 2 is increased by 1569!
+Unturned is increased by 830!
+Splitgate is increased by 511!
+
+ El-Guoshi's Stock List
+ ====================
+
+ ID 101: Dying Light stock level: 1736
+ ID 102: Slay the Spire stock level: 1917
+ ID 103: Dead by Daylight stock level: 722
+ ID 104: Inscryption stock level: 151
+ ID 105: DOOM Eternal stock level: 1185
+ ID 106: MORDHAU stock level: 73
+ ID 107: PAYDAY 2 stock level: 1988
+ ID 108: Risk of Rain 2 stock level: 1569
+ ID 109: Unturned stock level: 830
+ ID 110: Splitgate stock level: 511
+
+Dying Light has 1386 product sold!
+Slay the Spire has 1490 product sold!
+Can't sell the amount of Dead by Daylight!
+Can't sell the amount of Inscryption!
+Can't sell the amount of DOOM Eternal!
+Can't sell the amount of MORDHAU!
+PAYDAY 2 has 1 product sold!
+Can't sell the amount of Risk of Rain 2!
+Unturned has 474 product sold!
+Can't sell the amount of Splitgate!
+
+ El-Guoshi's Stock List
+ ====================
+
+ ID 101: Dying Light stock level: 350
+ ID 102: Slay the Spire stock level: 427
+ ID 103: Dead by Daylight stock level: 722
+ ID 104: Inscryption stock level: 151
+ ID 105: DOOM Eternal stock level: 1185
+ ID 106: MORDHAU stock level: 73
+ ID 107: PAYDAY 2 stock level: 1987
+ ID 108: Risk of Rain 2 stock level: 1569
+ ID 109: Unturned stock level: 356
+ ID 110: Splitgate stock level: 511
+
+Product outlast = new Product(111, "Outlast");
+Product outlast2 = new Product(112, "Outlast 2");
+gameStore.add(outlast);
+gameStore.add(outlast2);
+gameStore.print();
+
+ El-Guoshi's Stock List
+ ====================
+
+ ID 101: Dying Light stock level: 350
+ ID 102: Slay the Spire stock level: 427
+ ID 103: Dead by Daylight stock level: 722
+ ID 104: Inscryption stock level: 151
+ ID 105: DOOM Eternal stock level: 1185
+ ID 106: MORDHAU stock level: 73
+ ID 107: PAYDAY 2 stock level: 1987
+ ID 108: Risk of Rain 2 stock level: 1569
+ ID 109: Unturned stock level: 356
+ ID 110: Splitgate stock level: 511
+ ID 111: Outlast stock level: 0
+ ID 112: Outlast 2 stock level: 0
+
