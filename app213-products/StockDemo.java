@@ -4,8 +4,8 @@
  * The demonstration becomes properly functional as
  * the StockManager class is completed.
  * 
- * @author David J. Barnes and Michael Kölling.
- * @version 2016.02.29
+ * @author Youssef El-Guoshi
+ * @version 09/11/2021
  */
 public class StockDemo
 {
@@ -18,21 +18,21 @@ public class StockDemo
      */
     public StockDemo(StockList stock)
     {
-        this.stock = new StockList();
+        this.stock = stock;
         
         // Add at least 10 products, they must be unique to you
         // Make sure the ids are sequential numbers
         
-        stock.add(new Product(1, "Dead by Daylight"));
-        stock.add(new Product(2, "Slay the Spire"));
-        stock.add(new Product(3, "Dying Light"));
-        stock.add(new Product(4, "Inscryption"));
-        stock.add(new Product(5, "PAYDAY 2"));
-        stock.add(new Product(6, "Risk of Rain 2"));
-        stock.add(new Product(7, "Phasmophobia"));
-        stock.add(new Product(8, "MORDHAU"));
-        stock.add(new Product(9, "Unturned"));
-        stock.add(new Product(10, "DOOM Eternal"));
+        stock.add(new Product(101, "Dying Light"));
+        stock.add(new Product(102, "Slay the Spire"));
+        stock.add(new Product(103, "Dead by Daylight"));
+        stock.add(new Product(104, "Inscryption"));
+        stock.add(new Product(105, "DOOM Eternal"));
+        stock.add(new Product(106, "MORDHAU"));
+        stock.add(new Product(107, "PAYDAY 2"));
+        stock.add(new Product(108, "Risk of Rain 2"));
+        stock.add(new Product(109, "Unturned"));
+        stock.add(new Product(110, "Splitgate"));
         runDemo();
     }
     
@@ -53,7 +53,7 @@ public class StockDemo
         stock.print();        
 
         sellProducts();
-        stock.print();     
+        stock.print();        
     }
     
     private void buyProducts()
