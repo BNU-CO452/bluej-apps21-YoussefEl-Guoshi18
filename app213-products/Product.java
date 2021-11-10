@@ -50,21 +50,33 @@ public class Product
     {
         return quantity;
     }
-
+    
+    /**
+     * Sets a quantity of the product using the value in the parameter set by the user.
+     */
     public void setQuantity(int quantity)
     {
         this.quantity = quantity;
     }
     
+    /**
+     * Increase the quantity of the product using the parameters.
+     */
     public void increaseQuantity(int amount)
     {
         quantity = quantity + amount;
     }
     
+    /**
+     * Decrease the quantity of the product using the parameters if the "amount" is greater than the
+     * "quantity" then an error message is printed out.
+     */
     public void decreaseQuantity(int amount)
     {
         if(quantity >= amount)
             quantity = quantity - amount;
+        else
+        System.out.println("You can't do that!");
     }
     
     /**
@@ -75,7 +87,9 @@ public class Product
         return " ID " + id + ": " +  name + " stock level: " + quantity;
     }
 
-    
+    /**
+     * Prints line using the toString() method.
+     */
     public void print()
     {
         System.out.println(toString());

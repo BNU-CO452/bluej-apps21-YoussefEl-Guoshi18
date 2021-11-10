@@ -39,7 +39,6 @@ public class StockList
         buyProduct(productID, 1);
     }
     
-    
     /**
      * Buy a quantity of a particular product.
      * Increase the quantity of the product by the given amount.
@@ -84,6 +83,9 @@ public class StockList
         return null;
     }
     
+    /**
+     * Calls its overloading method with the product ID with a default value of "1".
+     */
     public void sellProduct(int productID)
     {
         sellProduct(productID, 1);
@@ -121,7 +123,6 @@ public class StockList
         }
     }    
 
-    
     /**
      * Locate a product with the given ID, and return how
      * many of this item are in stock. If the ID does not
@@ -134,6 +135,11 @@ public class StockList
         return 0;
     }
     
+    /**
+     * This method removes the product from the list by using param productID which call the
+     * find product that assigns to the Product value "product" and remove this product from
+     * the list and prints out the message.
+     */
     public void removeProduct(int productID)
     {
         Product product = findProduct(productID);
@@ -172,6 +178,11 @@ public class StockList
         System.out.println();
     }
     
+    /**
+     * This method prints the product that is lower than a given value which is "500", this goes through each
+     * product in the list, any product's quantity that is lower than 500 is then printed out with a low stock
+     * message.
+     */
      public void lowPrint()
     {
         printStock();
@@ -187,6 +198,10 @@ public class StockList
         System.out.println();
     }
     
+    /**
+     * This method will print out the product that has name that matches with the param name, go through
+     * each product in the list, if the product name contains the param "name" the it is printed out.
+     */
       public void printName(String name)
     {
         printNameHeading(name);
@@ -202,6 +217,9 @@ public class StockList
         System.out.println();
     }
     
+    /**
+     * Prints all the product in the list.
+     */
     public void printHeading()
     {
         System.out.println();
@@ -210,6 +228,9 @@ public class StockList
         System.out.println();
     }
     
+    /**
+     * Prints the product that are low in stock.
+     */
     public void printStock()
     {
         System.out.println();
@@ -218,10 +239,13 @@ public class StockList
         System.out.println();
     }
     
-        public void printNameHeading(String phase)
+    /**
+     * Prints the product that contains the "name" give in the param. 
+     */
+        public void printNameHeading(String name)
     {
         System.out.println();
-        System.out.println(" Here is what we have found using the phase " + phase );
+        System.out.println(" Here is what we have found using the phase " + name );
         System.out.println(" =================");
         System.out.println();
     }
