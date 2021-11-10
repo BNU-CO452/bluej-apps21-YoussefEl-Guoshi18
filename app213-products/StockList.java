@@ -189,7 +189,7 @@ public class StockList
     
       public void printName(String name)
     {
-        printNameHeading();
+        printNameHeading(name);
         
         for(Product product : stock)
         {
@@ -218,10 +218,10 @@ public class StockList
         System.out.println();
     }
     
-        public void printNameHeading()
+        public void printNameHeading(String phase)
     {
         System.out.println();
-        System.out.println(" Here is what we have found!" );
+        System.out.println(" Here is what we have found using the phase " + phase );
         System.out.println(" =================");
         System.out.println();
     }
