@@ -62,6 +62,11 @@ public class StockDemo
         searchName("Risk");
     }
     
+    /**
+     * Using the for loop, it loops to each product in the list using the ID, and generating random numbers
+     * up to 2000 which is used to increase the quantity. It call the buyProduct method through the StockList object
+     * "stock".
+     */
     private void buyProducts()
     {
         for(int i = 101; i <= 110; i++)
@@ -70,6 +75,11 @@ public class StockDemo
         }
     }
     
+    /**
+     * Using the for loop, it loops to each product in the list using the ID, and generating random numbers
+     * up to 2000 which is used to decrease the quantity. It call the sellProduct method through the StockList object
+     * "stock".
+     */
      private void sellProducts()
     {
         for(int i = 101; i <= 110; i++)
@@ -78,16 +88,26 @@ public class StockDemo
         }
     } 
     
+    /**
+     * Using the lowPrint() method from the "StockList" class.
+     */
     private void checkStock()
     {
         stock.lowPrint();    
     }
     
+    /**
+     * Using the searchName() method from the "StockList" class, with the String param "name"
+     * to look for the object that contains the name.
+     */
     private void searchName(String name)
     {
         stock.printName(name);
     }
     
+    /**
+     * Calls removeProducts() from the "StockList" class which contains a product ID.
+     */
     private void removeProducts()
     {
         stock.removeProduct(110);
