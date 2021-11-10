@@ -138,7 +138,7 @@ public class StockList
     {
         Product product = findProduct(productID);
         stock.remove(product);
-        System.out.println(product.getName() + " has been removed from the list!");
+        System.out.println(product.getName() + " has been removed from the list using ID " + product.getID());
     }
     
     /**
