@@ -50,7 +50,7 @@ Can't sell the amount of Risk of Rain!
 Risk of Rain 2 has 1194 product sold!
 Unturned has 104 product sold!
 Can't sell the amount of Splitgate!
-Splitgate has been removed from the list!
+Splitgate has been removed from the list using ID 110
 
  El-Guoshi's Stock List
  ====================
