@@ -5,7 +5,7 @@ import java.util.Random;
  * the StockManager class is completed.
  * 
  * @author Youssef El-Guoshi
- * @version 10/11/2021
+ * @version 18/11/2021
  */
 public class StockDemo
 {
