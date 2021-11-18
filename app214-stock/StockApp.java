@@ -11,7 +11,7 @@ public class StockApp
 {
     private InputReader reader;
     
-    //private ProductList stock;
+    private StockList stock;
     
     /**
      * Constructor for objects of class StockApp
@@ -20,8 +20,8 @@ public class StockApp
     {
         reader = new InputReader();
         
-        //stock = new ProductList();
-        //StockDemo demo = new StockDemo(stock);
+        stock = new StockList();
+        StockDemo demo = new StockDemo(stock);
     }
 
     /**
@@ -51,7 +51,53 @@ public class StockApp
         }
         else if(choice.equals("print"))
         {
-            //stock.print();
+            stock.print();
+        }
+        else if(choice.equals("add"))
+        {
+            int id = reader.getInt("Please enter ID: ");
+            String name = reader.getString("Please enter name: ");
+            if(stock.findProduct(id) != null)
+            {
+                System.out.println("Product has this ID already!");
+                run();
+            }
+            Product product = new Product(id , name);
+            stock.add(product);
+            System.out.println("Product " + product.getID() +
+            ", " + product.getName() + " has been added!");
+        }
+        else if(choice.equals("buy"))
+        {
+            int id = reader.getInt("Please enter ID: ");
+            int amount = reader.getInt("Please enter the amount: ");
+            stock.buyProduct(id, amount);
+            System.out.println("Product with ID, " + id + " has been successfully bought by " + amount);
+        }
+        else if(choice.equals("sell"))
+        {
+            int id = reader.getInt("Please enter ID: ");
+            int amount = reader.getInt("Please enter the amount: ");
+            stock.sellProduct(id, amount);
+        }
+        else if(choice.equals("remove"))
+        {
+            int id = reader.getInt("Please enter ID: ");
+            stock.removeProduct(id);
+        }
+        else if(choice.equals("search"))
+        {
+            String name = reader.getString("Please enter name: ");
+            stock.printName(name);
+        }
+        else if(choice.equals("lowstock"))
+        {
+            stock.lowPrint();
+        }
+        else if(choice.equals("restock"))
+        {
+            int amount = reader.getInt("How much do want to increase the quantity by: ");
+            stock.reStock(amount);
         }
         
         return false;
@@ -64,8 +110,13 @@ public class StockApp
     {
         System.out.println();
         System.out.println("    Add:        Add a new product");
+        System.out.println("    Buy:        Buy a new product");
+        System.out.println("    Sell:       Sell a product");
         System.out.println("    Remove:     Remove an old product");
+        System.out.println("    ReStock:    Replenish the products that are low in stock");
+        System.out.println("    Search:     Search a product");
         System.out.println("    Print:      Print all products");
+        System.out.println("    LowStock:   Checks which product is in low stock");
         System.out.println("    Quit:       Quit the program");
         System.out.println();        
     }
@@ -77,7 +128,7 @@ public class StockApp
     {
         System.out.println("********************************");
         System.out.println("  App21-04: Stock Application ");
-        System.out.println("      by Student Name");
+        System.out.println("      by Youssef El-Guoshi");
         System.out.println("********************************");
     }
 }
