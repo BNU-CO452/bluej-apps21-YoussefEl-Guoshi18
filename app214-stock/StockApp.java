@@ -57,15 +57,7 @@ public class StockApp
         {
             int id = reader.getInt("Please enter ID: ");
             String name = reader.getString("Please enter name: ");
-            if(stock.findProduct(id) != null)
-            {
-                System.out.println("Product has this ID already!");
-                run();
-            }
-            Product product = new Product(id , name);
-            stock.add(product);
-            System.out.println("Product " + product.getID() +
-            ", " + product.getName() + " has been added!");
+            stock.addProduct(id, name);
         }
         else if(choice.equals("buy"))
         {

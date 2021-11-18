@@ -206,6 +206,30 @@ public class StockList
         System.out.println();
     }
     
+    public void addProduct(int id, String name)
+    {
+        Product products = new Product(id, name);
+        boolean found = false;
+        for(Product product : stock)
+        {
+            if(product.getID() == id)
+            {
+                found = true;
+            }
+        }
+    if(found)
+    {
+        System.out.println("Another product already has this id!");
+    }
+    else
+    {
+        add(products);
+     System.out.println("Product " + id +
+            ", " + name + " has been added!");
+    }
+     
+    }
+    
     public void reStock(int amount)
     {
         
