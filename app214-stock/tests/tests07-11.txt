@@ -1,0 +1,140 @@
+Program.main({ });
+********************************
+  App21-04: Stock Application 
+      by Youssef El-Guoshi
+********************************
+
+    Add:        Add a new product
+    Buy:        Buy a new product
+    Sell:       Sell a product
+    Remove:     Remove an old product
+    ReStock:    Replenish the products that are low in stock
+    Search:     Search a product
+    Print:      Print all products
+    LowStock:   Checks which product is in low stock
+    Quit:       Quit the program
+
+Please enter your choice > buy
+Please enter ID: 
+101
+Please enter the amount: 
+4
+Product with ID, 101 has been successfully bought by 4
+********************************
+  App21-04: Stock Application 
+      by Youssef El-Guoshi
+********************************
+
+    Add:        Add a new product
+    Buy:        Buy a new product
+    Sell:       Sell a product
+    Remove:     Remove an old product
+    ReStock:    Replenish the products that are low in stock
+    Search:     Search a product
+    Print:      Print all products
+    LowStock:   Checks which product is in low stock
+    Quit:       Quit the program
+
+Please enter your choice > sell
+Please enter ID: 
+101
+Please enter the amount: 
+4
+Dying Light has 4 product sold!
+********************************
+  App21-04: Stock Application 
+      by Youssef El-Guoshi
+********************************
+
+    Add:        Add a new product
+    Buy:        Buy a new product
+    Sell:       Sell a product
+    Remove:     Remove an old product
+    ReStock:    Replenish the products that are low in stock
+    Search:     Search a product
+    Print:      Print all products
+    LowStock:   Checks which product is in low stock
+    Quit:       Quit the program
+
+Please enter your choice > search
+Please enter name: Risk
+
+ Here is what we have found using the phase Risk
+ =================
+
+ ID 107: Risk of Rain stock level: 3
+ ID 108: Risk of Rain 2 stock level: 5
+PRODUCT FOUND!
+
+********************************
+  App21-04: Stock Application 
+      by Youssef El-Guoshi
+********************************
+
+    Add:        Add a new product
+    Buy:        Buy a new product
+    Sell:       Sell a product
+    Remove:     Remove an old product
+    ReStock:    Replenish the products that are low in stock
+    Search:     Search a product
+    Print:      Print all products
+    LowStock:   Checks which product is in low stock
+    Quit:       Quit the program
+
+Please enter your choice > lowstock
+
+ OH NO looks like these products are in low stocks!
+ =========================================
+
+ ID 101: Dying Light stock level: 4
+ ID 102: Slay the Spire stock level: 2
+ ID 104: Inscryption stock level: 3
+ ID 105: DOOM Eternal stock level: 5
+ ID 107: Risk of Rain stock level: 3
+ ID 108: Risk of Rain 2 stock level: 5
+ ID 109: Unturned stock level: 3
+ ID 110: Splitgate stock level: 5
+
+********************************
+  App21-04: Stock Application 
+      by Youssef El-Guoshi
+********************************
+
+    Add:        Add a new product
+    Buy:        Buy a new product
+    Sell:       Sell a product
+    Remove:     Remove an old product
+    ReStock:    Replenish the products that are low in stock
+    Search:     Search a product
+    Print:      Print all products
+    LowStock:   Checks which product is in low stock
+    Quit:       Quit the program
+
+Please enter your choice > restock
+How much do want to increase the quantity by: 
+10
+ ID 101: Dying Light stock level: 14
+ ID 102: Slay the Spire stock level: 12
+ ID 104: Inscryption stock level: 13
+ ID 105: DOOM Eternal stock level: 15
+ ID 107: Risk of Rain stock level: 13
+ ID 108: Risk of Rain 2 stock level: 15
+ ID 109: Unturned stock level: 13
+ ID 110: Splitgate stock level: 15
+
+********************************
+  App21-04: Stock Application 
+      by Youssef El-Guoshi
+********************************
+
+    Add:        Add a new product
+    Buy:        Buy a new product
+    Sell:       Sell a product
+    Remove:     Remove an old product
+    ReStock:    Replenish the products that are low in stock
+    Search:     Search a product
+    Print:      Print all products
+    LowStock:   Checks which product is in low stock
+    Quit:       Quit the program
+
+Please enter your choice > 
