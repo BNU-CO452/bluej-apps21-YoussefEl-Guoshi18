@@ -1,0 +1,26 @@
+Product dyingLight = new Product(101, "Dying Light");
+dyingLight.print();
+ ID 101: Dying Light stock level: 0
+dyingLight.decreaseQuantity(5);
+You can't do that!
+dyingLight.print();
+ ID 101: Dying Light stock level: 0
+dyingLight.increaseQuantity(4);
+dyingLight.print();
+ ID 101: Dying Light stock level: 4
+dyingLight.decreaseQuantity(2);
+dyingLight.print();
+ ID 101: Dying Light stock level: 2
+StockList gameStore = new StockList();
+gameStore.add(dyingLight);
+Product mORDHAU = new Product(102, "MORDHAU");
+gameStore.add(mORDHAU);
+
+gameStore.print();
+
+ El-Guoshi's Stock List
+ ====================
+
+ ID 101: Dying Light stock level: 2
+ ID 102: MORDHAU stock level: 0
+

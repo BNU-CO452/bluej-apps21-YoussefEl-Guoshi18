@@ -5,7 +5,7 @@ import java.util.Random;
  * the StockManager class is completed.
  * 
  * @author Youssef El-Guoshi
- * @version 10/11/2021
+ * @version 18/11/2021
  */
 public class StockDemo
 {
@@ -49,17 +49,17 @@ public class StockDemo
     {
         // Show details of all of the products before delivery.
         
-        stock.print();
+        //stock.print();
         buyProducts();
-        stock.print();        
+        //stock.print();        
 
-        sellProducts();
-        removeProducts();
-        stock.print();
+        //sellProducts();
+        //removeProducts();
+        //stock.print();
         
-        checkStock();
+        //checkStock();
         
-        searchName("Risk");
+        //searchName("Risk");
     }
     
     /**
@@ -71,7 +71,7 @@ public class StockDemo
     {
         for(int i = 101; i <= 110; i++)
         {
-        stock.buyProduct(i, random.nextInt(2000));
+        stock.buyProduct(i, random.nextInt(10));
         }
     }
     
@@ -84,7 +84,7 @@ public class StockDemo
     {
         for(int i = 101; i <= 110; i++)
         {
-        stock.sellProduct(i, random.nextInt(2000));
+        stock.sellProduct(i, random.nextInt(10));
         }
     } 
     

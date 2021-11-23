@@ -1,0 +1,15 @@
+Module programmingConcepts = new Module("CO452", "Programming concepts");
+programmingConcepts.print();
+ Module Code: CO452: Programming concepts : Credit: 0
+
+programmingConcepts.setCredit(15);
+programmingConcepts.print();
+ Module Code: CO452: Programming concepts : Credit: 15
+
+Course gamesDevelopment = new Course("BT1GDV1", "Games Development");
+gamesDevelopment.printModule();
+    Exception occurred.
+gamesDevelopment.addModule(programmingConcepts);
+gamesDevelopment.printModule();
+ Module Code: CO452: Programming concepts : Credit: 15
+

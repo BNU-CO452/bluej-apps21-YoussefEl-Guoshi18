@@ -1,0 +1,84 @@
+StockList gameStore = new StockList();
+StockDemo youssefDemo = new StockDemo(gameStore);
+
+ El-Guoshi's Stock List
+ ====================
+
+ ID 101: Dying Light stock level: 0
+ ID 102: Slay the Spire stock level: 0
+ ID 103: Dead by Daylight stock level: 0
+ ID 104: Inscryption stock level: 0
+ ID 105: DOOM Eternal stock level: 0
+ ID 106: MORDHAU stock level: 0
+ ID 107: Risk of Rain stock level: 0
+ ID 108: Risk of Rain 2 stock level: 0
+ ID 109: Unturned stock level: 0
+ ID 110: Splitgate stock level: 0
+
+Dying Light is increased by 157!
+Slay the Spire is increased by 39!
+Dead by Daylight is increased by 1135!
+Inscryption is increased by 905!
+DOOM Eternal is increased by 553!
+MORDHAU is increased by 1045!
+Risk of Rain is increased by 210!
+Risk of Rain 2 is increased by 1206!
+Unturned is increased by 1286!
+Splitgate is increased by 3!
+
+ El-Guoshi's Stock List
+ ====================
+
+ ID 101: Dying Light stock level: 157
+ ID 102: Slay the Spire stock level: 39
+ ID 103: Dead by Daylight stock level: 1135
+ ID 104: Inscryption stock level: 905
+ ID 105: DOOM Eternal stock level: 553
+ ID 106: MORDHAU stock level: 1045
+ ID 107: Risk of Rain stock level: 210
+ ID 108: Risk of Rain 2 stock level: 1206
+ ID 109: Unturned stock level: 1286
+ ID 110: Splitgate stock level: 3
+
+Can't sell the amount of Dying Light!
+Can't sell the amount of Slay the Spire!
+Can't sell the amount of Dead by Daylight!
+Inscryption has 170 product sold!
+DOOM Eternal has 424 product sold!
+Can't sell the amount of MORDHAU!
+Can't sell the amount of Risk of Rain!
+Risk of Rain 2 has 1194 product sold!
+Unturned has 104 product sold!
+Can't sell the amount of Splitgate!
+Splitgate has been removed from the list using ID 110
+
+ El-Guoshi's Stock List
+ ====================
+
+ ID 101: Dying Light stock level: 157
+ ID 102: Slay the Spire stock level: 39
+ ID 103: Dead by Daylight stock level: 1135
+ ID 104: Inscryption stock level: 735
+ ID 105: DOOM Eternal stock level: 129
+ ID 106: MORDHAU stock level: 1045
+ ID 107: Risk of Rain stock level: 210
+ ID 108: Risk of Rain 2 stock level: 12
+ ID 109: Unturned stock level: 1182
+
+
+ OH NO looks like these products are in low stocks!
+ =========================================
+
+ ID 101: Dying Light stock level: 157
+ ID 102: Slay the Spire stock level: 39
+ ID 105: DOOM Eternal stock level: 129
+ ID 107: Risk of Rain stock level: 210
+ ID 108: Risk of Rain 2 stock level: 12
+
+
+ Here is what we have found using the phase Risk
+ =================
+
+ ID 107: Risk of Rain stock level: 210
+ ID 108: Risk of Rain 2 stock level: 12
+

@@ -3,8 +3,8 @@
  * credits that students achieve when they
  * pass the module with a mark of 40+
  *
- * @author Derek Peacock and Nicholas Day
- * @version 1.0 17/07/2021
+ * @author Youssef El-Guoshi
+ * @version 26/10/2021
  */
 public class Module
 {
@@ -24,13 +24,17 @@ public class Module
         this.title = title;
     }
 
-   
+   /**
+    *  A getter method that returns the code value.
+    */
     public String getCode()
     {
         return code;
     }
     
-    
+    /**
+    *  A getter method that returns the title value.
+    */
     public String getTitle()
     {
         return title;

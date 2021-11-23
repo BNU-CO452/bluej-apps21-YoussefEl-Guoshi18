@@ -3,9 +3,8 @@
  * a student at BNU.  The class also contains information 
  * concerning the course the student is currently enrolled on
  * 
- * @author Michael Kölling and David Barnes
- * @modified by Derek Peacock and Nicholas Day
- * @version 2021:08:15
+ * @author Youssef El-Guoshi
+ * @version 19/10/2021
  */
 public class Student
 {
@@ -41,6 +40,9 @@ public class Student
         return id;
     }
 
+    /**
+     * Enrols the student into the course.
+     */
     public void enrol(Course course)
     {
         this.course = course;
@@ -54,6 +56,9 @@ public class Student
         System.out.println(" Student ID: " + id + " Name: " + name);
     }
     
+    /**
+     * Prints the details of the course.
+     */
     public void printCourse()
     {
         course.print();

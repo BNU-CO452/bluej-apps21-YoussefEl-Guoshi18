@@ -2,7 +2,7 @@
  * Model some details of a product sold by a company.
  * 
  * @author Youssef El-Guoshi
- * @version 09/11/2021
+ * @version 18/11/2021
  */
 public class Product
 {
