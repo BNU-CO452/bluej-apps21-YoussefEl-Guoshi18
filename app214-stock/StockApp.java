@@ -48,33 +48,82 @@ public class StockApp {
       } else if (choice.equals("print")) {
          stock.print();
       } else if (choice.equals("add")) {
-         int id = reader.getInt("Please enter ID: ");
-         String name = reader.getString("Please enter name: ");
-         stock.addProduct(id, name);
+        addProduct();
       } else if (choice.equals("buy")) {
-         int id = reader.getInt("Please enter ID: ");
-         int amount = reader.getInt("Please enter the amount: ");
-         stock.buyProduct(id, amount);
-         System.out.println("Product with ID, " + id + " has been successfully bought by " + amount);
+        buyProduct();
       } else if (choice.equals("sell")) {
-         int id = reader.getInt("Please enter ID: ");
-         int amount = reader.getInt("Please enter the amount: ");
-         stock.sellProduct(id, amount);
+        sellProduct();
       } else if (choice.equals("remove")) {
-         int id = reader.getInt("Please enter ID: ");
-         stock.removeProduct(id);
+        removeProduct();
       } else if (choice.equals("search")) {
-         String name = reader.getString("Please enter name: ");
-         stock.printName(name);
+        searchProduct();
       } else if (choice.equals("lowstock")) {
-         stock.lowPrint();
+        stock.lowPrint();
       } else if (choice.equals("restock")) {
-         int amount = reader.getInt("How much do want to increase the quantity by: ");
-         stock.reStock(amount);
+        reStockProduct();
       }
 
       return false;
    }
+   
+   /**
+    * Add a products to a list.
+    */
+   private void addProduct()
+   {
+       int id = reader.getInt("Please enter ID: ");
+        String name = reader.getString("Please enter name: ");
+        stock.addProduct(id, name);
+   }
+   
+   /**
+    * Asks the user for the quantity and the product with low quantity is increased.
+    */
+   private void reStockProduct()
+   {
+       int amount = reader.getInt("How much do want to increase the quantity by: ");
+       stock.reStock(amount);
+   }
+   
+   /**
+    * Prints the list of the product containing the String name.
+    */
+   private void searchProduct()
+   {
+       String name = reader.getString("Please enter name: ");
+       stock.printName(name);
+   }
+   
+   /**
+    * Removes the product by ID.
+    */
+   private void removeProduct()
+   {
+       int id = reader.getInt("Please enter ID: ");
+       stock.removeProduct(id);
+   }
+   
+   /**
+    * Sell the product by that amount requested by the user.
+    */
+   private void sellProduct()
+   {
+       int id = reader.getInt("Please enter ID: ");
+       int amount = reader.getInt("Please enter the amount: ");
+       stock.sellProduct(id, amount);
+   }
+   
+   /**
+    * Buys the product by the amount the user requested.
+    */
+   private void buyProduct()
+   {
+       int id = reader.getInt("Please enter ID: ");
+       int amount = reader.getInt("Please enter the amount: ");
+       stock.buyProduct(id, amount);
+       System.out.println("Product with ID, " + id + " has been successfully bought by " + amount);
+   }
+
 
    /**
     * Print out a menu of operation choices
