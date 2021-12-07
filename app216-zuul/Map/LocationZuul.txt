@@ -1,0 +1,8 @@
+1) Treasure room
+2) Cellar
+3) Cabinets
+4) Bathroom
+5) Bed chamber
+6) Solar room
+7) Buttery room
+8) Chapels
