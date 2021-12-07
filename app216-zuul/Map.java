@@ -4,12 +4,14 @@
  * linking all the Locations in the game to
  * form a 2D or 3D network
  *
- *  [Pub]<---->[Outside]<---->[Theatre]
- *                 |
- *          [Computer Lab]<---->[Office]
+ *  [Bathroom]      [Cellar]
+ *       |              |
+ *   [Cabinet]<----->[Solar]<---->[Chapel]<---->[Treasure room]
+ *       |              |
+ *   [Buttery]      [Bathroom]
  *             
- * @author Derek Peacock and Nicholas Day
- * @version 2021-08-22
+ * @author Youssef El-Guoshi
+ * @version 07/12/2021
  */
 public class Map
 {
