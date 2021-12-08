@@ -17,7 +17,7 @@ public class Map
 {
     // Need to add a list of exits
     
-    private Location outside, theater, pub, lab, office;
+    private Location cabinet, buttery, bathroom, cellar, solar;
 
     private Location currentLocation;
 
@@ -37,69 +37,78 @@ public class Map
      */
     private void createLocations()
     {
-        createOutside();
-        createTheatre();
-        createPub();
-        createOffice();
-        createLab();
+        createCabinet();
+        createButtery();
+        createBathroom();
+        createSolar();
+        createCellar();
 
-        currentLocation = outside;  // start game outside
+        currentLocation = cabinet;  // start game outside
     }
     
     /**
      * Create the outside and link it to the
      * theatre, lab and pub
      */
-    private void createOutside()
+    private void createCabinet()
     {
-        outside = new Location("outside the main entrance of the university");
+        cabinet = new Location("You enter the cabinet, you see rodents gushing out of the forbidden shelfs.");
+        
         
     }
     
     /**
      * Create the pub and link it to the outside
      */
-    private void createPub()
+    private void createBathroom()
     {
-        pub = new Location("in the campus pub");
+        bathroom = new Location("You enter the bathroom and you witness a spider coming out of those rusty taps.");
         
-        pub.setExit("east", outside);
-        outside.setExit("west", pub);
+        bathroom.setExit("south", cabinet);
+        cabinet.setExit("north", bathroom);
     }
     
     /**
      * Create the theatre linked to the outside
      */
-    private void createTheatre()
+    private void createButtery()
     {
-        theater = new Location("in a lecture theater");
+        buttery = new Location("You enter the buttery and a reeking smell of rotten bread comes right into your nostrils.");
         
-        theater.setExit("west", outside);
-        outside.setExit("east", theater);
+        buttery.setExit("north", cabinet);
+        cabinet.setExit("south", buttery);
     }
     
     /**
      * Create the office linked to the lab
      */
-    private void createOffice()
+    private void createSolar()
     {
-        office = new Location("in the computing admin office");
+        solar = new Location("You enter the Solar room and you see recrudescence of insects under the chimney.");
         
     }
     
     /**
      * Create the lab and link it to the outside and office
      */
-    private void createLab()
+    private void createCellar()
     {
         // create the Locations
-        lab = new Location("in a computing lab");
+        cellar = new Location("You enter the cellar, it's pitch black and if you have a useful item, it'll be easier to explore.");
         
-        lab.setExit("east", office);
-        office.setExit("west", lab);
+        cellar.setExit("south", solar);
+        solar.setExit("north", cellar);
         
-        lab.setExit("north", outside);
-        outside.setExit("south", lab);
+    }
+    
+        private void createCellar()
+    {
+        // create the Locations
+        cellar = new Location("You enter the cellar, it's pitch black and if you have a useful item, it'll be easier to explore.");
+        
+        cellar.setExit("south", solar);
+        solar.setExit("north", cellar);
+        
     }
     
     public Location getCurrentLocation()
