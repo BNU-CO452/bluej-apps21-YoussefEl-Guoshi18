@@ -17,7 +17,7 @@ public class Map
 {
     // Need to add a list of exits
     
-    private Location cabinet, buttery, bathroom, cellar, solar;
+    private Location cabinet, buttery, bathroom, cellar, solar, bedchamber, chapel, treasureroom;
 
     private Location currentLocation;
 
@@ -42,6 +42,9 @@ public class Map
         createBathroom();
         createSolar();
         createCellar();
+        createBedchamber();
+        createChapel();
+        createTreasureroom();
 
         currentLocation = cabinet;  // start game outside
     }
@@ -53,8 +56,6 @@ public class Map
     private void createCabinet()
     {
         cabinet = new Location("You enter the cabinet, you see rodents gushing out of the forbidden shelfs.");
-        
-        
     }
     
     /**
@@ -86,6 +87,8 @@ public class Map
     {
         solar = new Location("You enter the Solar room and you see recrudescence of insects under the chimney.");
         
+        solar.setExit("west", cabinet);
+        cabinet.setExit("east",solar);
     }
     
     /**
@@ -101,15 +104,38 @@ public class Map
         
     }
     
-        private void createCellar()
+        private void createBedchamber()
     {
         // create the Locations
-        cellar = new Location("You enter the cellar, it's pitch black and if you have a useful item, it'll be easier to explore.");
+        bedchamber = new Location("You enter the bed chamber, seeing rats tearing mattress off from the bed.");
         
-        cellar.setExit("south", solar);
-        solar.setExit("north", cellar);
+        bedchamber.setExit("north", solar);
+        solar.setExit("south", bedchamber);
         
     }
+    
+        private void createChapel()
+    {
+        // create the Locations
+        chapel = new Location("You enter the Chapel, all the seats are empty but you see a cross on the table. Maybe you can pray, who knows? Something good may happen to you.");
+         
+        
+        chapel.setExit("west", solar);
+        solar.setExit("east", chapel);
+        
+    }
+    
+            private void createTreasureroom()
+    {
+        // create the Locations
+        treasureroom = new Location("You enter the treasure room, ITS TIME to fight off the dragon! Also there is no turning back now!");
+        
+        //treasureroom.setExit("west",chapel);
+        chapel.setExit("east", treasureroom);
+        
+    }
+    
+
     
     public Location getCurrentLocation()
     {
