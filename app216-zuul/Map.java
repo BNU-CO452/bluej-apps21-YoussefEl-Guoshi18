@@ -161,4 +161,9 @@ public class Map
     {
         currentLocation = nextLocation;
     }
+    
+    public void nextItem(Item nextItem)
+    {
+        getItem = nextItem;
+    }
 }
