@@ -20,7 +20,7 @@ public class Game
 {
     public final Map MAP;
     private CommandReader reader;
-    private Player player;
+    public Player player;
     private boolean gameOver;
         
     /**
@@ -49,7 +49,10 @@ public class Game
             gameOver = reader.getCommand();
         }
         
-        System.out.println("Thank you for playing.  Good bye.");
+        if(gameOver && player.getStamina() == 1)
+        {
+        System.out.println("Seems like you tired yourself out, you'll now rot in this dungeon, goodbye for now.");
+        }
     }
 
     /**
@@ -61,6 +64,7 @@ public class Game
         System.out.println(" Welcome to the World of Zuul!");
         System.out.println(" World of Zuul is a new, incredibly boring adventure game.");
         System.out.println(" Type 'help' if you need help.");
+        System.out.println("Your player currently has " + player.getStamina() + " stamina and " + player.getHealth() + " health.");
         System.out.println();
         System.out.println(MAP.getCurrentLocation().getLongDescription());
     }

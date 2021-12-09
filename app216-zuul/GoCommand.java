@@ -27,11 +27,16 @@ public class GoCommand extends ZuulCommand
         }
 
         Map map = zuul.MAP;
+        Player player = zuul.player;
         
         // Try to leave current room.
         Location currentLocation = map.getCurrentLocation();
         Location nextLocation = currentLocation.getExit(direction);
-
+        
+        
+     if(player.getStamina() != 0)
+     {
+     
         if (nextLocation == null) 
         {
             System.out.println("There is no exit in this direction!");
@@ -40,6 +45,14 @@ public class GoCommand extends ZuulCommand
         {
             map.enterLocation(nextLocation);
             System.out.println(map.getCurrentLocation().getLongDescription());
+            System.out.println(map.getCurrentItem().getLongDescription());
+            player.decreaseStamina();
+            System.out.println("You now have " + player.getStamina() + " stamina left.");
         }
+    }
+     else
+     {
+     System.out.println("Oh no seems like you ran out of stamina!");
+     }
     }
 }

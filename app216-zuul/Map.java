@@ -18,8 +18,9 @@ public class Map
     // Need to add a list of exits
     
     private Location cabinet, buttery, bathroom, cellar, solar, bedchamber, chapel, treasureroom;
-
+    private Item redOrb, greenOrb, blueOrb, cellarKey, chapelKey, forbiddenSword, goldenSword, torchlight;
     private Location currentLocation;
+    private Item currentItem;
 
     /**
      * Constructor for objects of class Map
@@ -55,7 +56,9 @@ public class Map
      */
     private void createCabinet()
     {
+        torchlight = new Item ("A dusty torch that hasn't been touched in a really long time.");
         cabinet = new Location("You enter the cabinet, you see rodents gushing out of the forbidden shelfs.");
+        torchlight.setItems("torchlight", cabinet);
     }
     
     /**
@@ -64,9 +67,11 @@ public class Map
     private void createBathroom()
     {
         bathroom = new Location("You enter the bathroom and you witness a spider coming out of those rusty taps.");
-        
+        redOrb = new Item("You found a shiny red orb in the bathroom tub!");
+        redOrb.setItems("redorb", bathroom);
         bathroom.setExit("south", cabinet);
         cabinet.setExit("north", bathroom);
+        
     }
     
     /**
@@ -75,7 +80,8 @@ public class Map
     private void createButtery()
     {
         buttery = new Location("You enter the buttery and a reeking smell of rotten bread comes right into your nostrils.");
-        
+        cellarKey = new Item("Inside one of the moldy bread you found a cellar key!");
+        cellarKey.setItems("cellarKey", buttery);
         buttery.setExit("north", cabinet);
         cabinet.setExit("south", buttery);
     }
@@ -86,7 +92,8 @@ public class Map
     private void createSolar()
     {
         solar = new Location("You enter the Solar room and you see recrudescence of insects under the chimney.");
-        
+        blueOrb = new Item("You found a blue Orb under the chimney!");
+        blueOrb.setItems("blueorb", solar);
         solar.setExit("west", cabinet);
         cabinet.setExit("east",solar);
     }
@@ -98,7 +105,8 @@ public class Map
     {
         // create the Locations
         cellar = new Location("You enter the cellar, it's pitch black and if you have a useful item, it'll be easier to explore.");
-        
+        redOrb = new Item("You found a shiny red orb!");
+        redOrb.setItems("redorb", cellar);
         cellar.setExit("south", solar);
         solar.setExit("north", cellar);
         
@@ -108,7 +116,8 @@ public class Map
     {
         // create the Locations
         bedchamber = new Location("You enter the bed chamber, seeing rats tearing mattress off from the bed.");
-        
+        chapelKey = new Item("You found the key to the chapel!");
+        chapelKey.setItems("chapelkey", bedchamber);
         bedchamber.setExit("north", solar);
         solar.setExit("south", bedchamber);
         
@@ -118,14 +127,16 @@ public class Map
     {
         // create the Locations
         chapel = new Location("You enter the Chapel, all the seats are empty but you see a cross on the table. Maybe you can pray, who knows? Something good may happen to you.");
-         
-        
+        forbiddenSword = new Item("Nice! You obtained a forbidden sword! Now you can battle the dragon only if you obtained three orbs first.");
+        goldenSword = new Item("AMAZING! You obtained a RARE golden sword! The dragon wouldn't stand a chance.");
+        forbiddenSword.setItems("forbiddensword", chapel);
+        goldenSword.setItems("goldensword", chapel);
         chapel.setExit("west", solar);
         solar.setExit("east", chapel);
         
     }
     
-            private void createTreasureroom()
+     private void createTreasureroom()
     {
         // create the Locations
         treasureroom = new Location("You enter the treasure room, ITS TIME to fight off the dragon! Also there is no turning back now!");
@@ -135,11 +146,14 @@ public class Map
         
     }
     
-
-    
     public Location getCurrentLocation()
     {
         return currentLocation;
+    }
+    
+    public Item getCurrentItem()
+    {
+        return currentItem;
     }
     
     public void enterLocation(Location nextLocation)

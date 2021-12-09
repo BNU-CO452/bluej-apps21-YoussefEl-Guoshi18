@@ -2,8 +2,8 @@
 /**
  * Write a description of class Player here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Youssef El-Guoshi
+ * @version 09/12/2021
  */
 public class Player
 {
@@ -19,13 +19,23 @@ public class Player
         this.stamina = stamina;
     }
 
-     private void decreaseHealth()
+     public void decreaseHealth()
     {
         health = health - 1;
     }
     
-     private void decreaseStamina()
+     public void decreaseStamina()
     {
         stamina = stamina - 1;
+    }
+    
+    public int getStamina()
+    {
+        return stamina;
+    }
+    
+    public int getHealth()
+    {
+        return health;
     }
 }

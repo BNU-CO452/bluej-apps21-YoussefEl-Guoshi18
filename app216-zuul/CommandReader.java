@@ -65,6 +65,10 @@ public class CommandReader
         if(commandWord.equals(CommandWords.GO.word))
         {
             GoCommand go = new GoCommand(game, word2);
+         if (game.player.getStamina() == 1)
+         {
+            return true;
+         }
             go.execute();
         }
         else if(commandWord.equals(CommandWords.TAKE.word))
@@ -81,8 +85,10 @@ public class CommandReader
         {
             return true;  // game over
         }
-
-        // Return false means the game is not over
+        else if (game.player.getStamina() == 0)
+        {
+            return true;
+        }// Return false means the game is not over
         return false;
     }
 }
