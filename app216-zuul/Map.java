@@ -20,7 +20,7 @@ public class Map
     private Location cabinet, buttery, bathroom, cellar, solar, bedchamber, chapel, treasureroom;
     private Item redOrb, greenOrb, blueOrb, cellarKey, chapelKey, forbiddenSword, goldenSword, torchlight;
     private Location currentLocation;
-    private Item currentItem;
+    private Item getItem;
 
     /**
      * Constructor for objects of class Map
@@ -46,8 +46,8 @@ public class Map
         createBedchamber();
         createChapel();
         createTreasureroom();
-
-        currentLocation = cabinet;  // start game outside
+        currentLocation = cabinet;// start game outside
+        getItem = torchlight;
     }
     
     /**
@@ -151,10 +151,11 @@ public class Map
         return currentLocation;
     }
     
-    public Item getCurrentItem()
+        public Item getCurrentItem()
     {
-        return currentItem;
+        return getItem;
     }
+    
     
     public void enterLocation(Location nextLocation)
     {

@@ -20,7 +20,7 @@ import java.util.Iterator;
 public class Location 
 {
     private String description;
-    private HashMap<String, Location> exits;        // stores exits of this room.
+    private HashMap<String, Location> exits;// stores exits of this room.   
 
     /**
      * Create a location described "description". Initially, it has
@@ -62,7 +62,7 @@ public class Location
     {
         return " You are " + description + "\n" + getExitString();
     }
-
+    
     /**
      * Return a string describing the locations's exits, 
      * for example "Exits: north west".
