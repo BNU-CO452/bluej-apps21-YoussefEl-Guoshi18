@@ -76,6 +76,11 @@ public class CommandReader
             TakeCommand take = new TakeCommand(game, word2);
             take.execute();
         }
+        else if(commandWord.equals(CommandWords.INSPECT.word))
+        {
+            InspectCommand inspect = new InspectCommand(game, word2);
+            inspect.execute();
+        }
         else if(commandWord.equals(CommandWords.INVENTORY.word))
         {
             InventoryCommand inventory = new InventoryCommand(game);

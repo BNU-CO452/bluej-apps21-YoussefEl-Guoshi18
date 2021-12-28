@@ -13,7 +13,7 @@ public enum CommandWords
     HELP ("help", "List all available commands"),
     INVENTORY("inventory", "List the item the player obtained"),
     QUIT ("quit", "End the game"),
-    SEEK ("seek", "help look at all item in the location");
+    INSPECT ("inspect", "looks at the detail of the item");
     
     public final String word;
     public final String description;
