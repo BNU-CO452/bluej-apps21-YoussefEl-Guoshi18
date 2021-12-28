@@ -21,7 +21,8 @@ public class Location
 {
     private String description;
     private HashMap<String, Location> exits;// stores exits of this room.   
-
+    private Item item;
+    private HashMap<String, Item> items;
     /**
      * Create a location described "description". Initially, it has
      * no exits. "description" is something like "a kitchen" or
@@ -31,6 +32,7 @@ public class Location
     {
         this.description = description;
         exits = new HashMap<>();
+        items = new HashMap<>();
     }
 
     /**
@@ -41,6 +43,12 @@ public class Location
     public void setExit(String direction, Location neighbor) 
     {
         exits.put(direction, neighbor);
+    }
+    
+    public void setItem(String name ,Item item)
+    {
+        this.item = item;
+        items.put(name, item);
     }
 
     /**
@@ -60,7 +68,12 @@ public class Location
      */
     public String getLongDescription()
     {
-        return " You are " + description + "\n" + getExitString();
+        return " You are " + description + "\n" + getExitString() + "\n" + getItemString();
+    }
+    
+    public String fetchItem()
+    {
+        return getItemString();
     }
     
     /**
@@ -78,7 +91,31 @@ public class Location
         }
         return returnString;
     }
-
+    
+    private String getItemString()
+    {
+        String returnString = " Items avaliable:";
+        Set<String> keys = items.keySet();
+        
+        for(String item : keys) 
+        {
+            returnString += " " + item;
+        }
+        return returnString;
+    }
+    
+    /**private String getItemString()
+    {
+      if(item != null)
+      {
+        String returnString = "Item avaliable are: ";
+        returnString += " " + item.getName();
+        return returnString;
+      }
+      return "Item not avaliable in this location.";
+    }
+    */
+  
     /**
      * Return the room that is reached if we go from this room in direction
      * "direction". If there is no room in that direction, return null.
@@ -88,6 +125,16 @@ public class Location
     public Location getExit(String direction) 
     {
         return exits.get(direction);
+    }
+    
+    public Item getItem(String item) 
+    {
+        return items.get(item);
+    }
+    
+    public Item removeItem(String item)
+    {
+        return items.remove(item);
     }
 }
 

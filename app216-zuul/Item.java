@@ -1,6 +1,4 @@
-import java.util.Set;
-import java.util.HashMap;
-import java.util.Iterator;
+
 /**
  * Write a description of class Item here.
  *
@@ -10,41 +8,42 @@ import java.util.Iterator;
 public class Item
 {
     // instance variables - replace the example below with your own
-    private HashMap<String, Location> items;
-    private String description;
+    String name;
+    String description;
+    int id;
+
     /**
      * Constructor for objects of class Item
      */
-    public Item(String description)
+    public Item(String name, String description, int id)
     {
-        // initialise instance variables
-        this.description = description;
-        items = new HashMap<>();
+      this.name = name;
+      this.description = description;
+      this.id = id;
     }
 
-    public void setItems(String item, Location neighbor) 
+    public String getName()
     {
-        items.put(item, neighbor);
+        return name;
     }
     
-    public String getLongDescription()
+    public String getDescription()
     {
-        return " This is the item avaliable: " + "\n" + getItemString();
+        return description;
     }
     
-    private String getItemString()
+    public int getId()
     {
-     String returnItem = "Items: ";
-     Set<String> keys = items.keySet();
-     for(String item : keys)
-     {
-        returnItem += " " + item;
-     }
-     return returnItem;
+        return id;
     }
     
-    public Location getItem(String item)
+    public void getShortDescription()
     {
-        return items.get(item);
+        System.out.println(name);
+    }
+    
+    public void getLongDescription()
+    {
+        System.out.println(name);
     }
 }

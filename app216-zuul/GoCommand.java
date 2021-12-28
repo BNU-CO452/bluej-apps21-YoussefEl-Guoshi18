@@ -46,7 +46,6 @@ public class GoCommand extends ZuulCommand
         {
             map.enterLocation(nextLocation);
             System.out.println(map.getCurrentLocation().getLongDescription());
-            System.out.println(map.getCurrentItem().getLongDescription());
             player.decreaseStamina();
             System.out.println("You now have " + player.getStamina() + " stamina left.");
         }

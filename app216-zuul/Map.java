@@ -18,9 +18,7 @@ public class Map
     // Need to add a list of exits
     
     private Location cabinet, buttery, bathroom, cellar, solar, bedchamber, chapel, treasureroom;
-    private Item redOrb, greenOrb, blueOrb, cellarKey, chapelKey, forbiddenSword, goldenSword, torchlight;
     private Location currentLocation;
-    private Item getItem;
 
     /**
      * Constructor for objects of class Map
@@ -47,7 +45,6 @@ public class Map
         createChapel();
         createTreasureroom();
         currentLocation = cabinet;// start game outside
-        getItem = torchlight;
     }
     
     /**
@@ -56,9 +53,7 @@ public class Map
      */
     private void createCabinet()
     {
-        torchlight = new Item ("A dusty torch that hasn't been touched in a really long time.");
         cabinet = new Location("You enter the cabinet, you see rodents gushing out of the forbidden shelfs.");
-        torchlight.setItems("torchlight", cabinet);
     }
     
     /**
@@ -67,10 +62,10 @@ public class Map
     private void createBathroom()
     {
         bathroom = new Location("You enter the bathroom and you witness a spider coming out of those rusty taps.");
-        redOrb = new Item("You found a shiny red orb in the bathroom tub!");
-        redOrb.setItems("redorb", bathroom);
         bathroom.setExit("south", cabinet);
         cabinet.setExit("north", bathroom);
+        bathroom.setItem("torchlight" , new Item("torchlight", "A rusty torch which has not been touched in a while.", 1));
+        bathroom.setItem("cellarkey" , new Item("cellarkey", "An abandoned key found on the floor.", 2));
         
     }
     
@@ -80,10 +75,9 @@ public class Map
     private void createButtery()
     {
         buttery = new Location("You enter the buttery and a reeking smell of rotten bread comes right into your nostrils.");
-        cellarKey = new Item("Inside one of the moldy bread you found a cellar key!");
-        cellarKey.setItems("cellarKey", buttery);
         buttery.setExit("north", cabinet);
         cabinet.setExit("south", buttery);
+        buttery.setItem("Steak", new Item("Steak", "A steak has been left for a while now, seems out of date would you like to give it a try?", 3));
     }
     
     /**
@@ -92,10 +86,10 @@ public class Map
     private void createSolar()
     {
         solar = new Location("You enter the Solar room and you see recrudescence of insects under the chimney.");
-        blueOrb = new Item("You found a blue Orb under the chimney!");
-        blueOrb.setItems("blueorb", solar);
         solar.setExit("west", cabinet);
         cabinet.setExit("east",solar);
+        solar.setItem("redorb", new Item("redorb", "Nice, you found a shiny red Orb to unlock the treasure room!", 4));
+        solar.setItem("clover", new Item("clover", "A clover hopefully its more useful soon!", 5));
     }
     
     /**
@@ -105,8 +99,6 @@ public class Map
     {
         // create the Locations
         cellar = new Location("You enter the cellar, it's pitch black and if you have a useful item, it'll be easier to explore.");
-        redOrb = new Item("You found a shiny red orb!");
-        redOrb.setItems("redorb", cellar);
         cellar.setExit("south", solar);
         solar.setExit("north", cellar);
         
@@ -116,8 +108,6 @@ public class Map
     {
         // create the Locations
         bedchamber = new Location("You enter the bed chamber, seeing rats tearing mattress off from the bed.");
-        chapelKey = new Item("You found the key to the chapel!");
-        chapelKey.setItems("chapelkey", bedchamber);
         bedchamber.setExit("north", solar);
         solar.setExit("south", bedchamber);
         
@@ -127,10 +117,6 @@ public class Map
     {
         // create the Locations
         chapel = new Location("You enter the Chapel, all the seats are empty but you see a cross on the table. Maybe you can pray, who knows? Something good may happen to you.");
-        forbiddenSword = new Item("Nice! You obtained a forbidden sword! Now you can battle the dragon only if you obtained three orbs first.");
-        goldenSword = new Item("AMAZING! You obtained a RARE golden sword! The dragon wouldn't stand a chance.");
-        forbiddenSword.setItems("forbiddensword", chapel);
-        goldenSword.setItems("goldensword", chapel);
         chapel.setExit("west", solar);
         solar.setExit("east", chapel);
         
@@ -143,6 +129,8 @@ public class Map
         
         //treasureroom.setExit("west",chapel);
         chapel.setExit("east", treasureroom);
+        chapel.setItem("forbiddensword", new Item("forbiddensword", "Nice, it will be a good fight against the dragon!", 6));
+        chapel.setItem("goldensword", new Item("goldensword", "AMAZING! The battle with the dragon will be a slice of cake!", 7));
         
     }
     
@@ -151,19 +139,9 @@ public class Map
         return currentLocation;
     }
     
-        public Item getCurrentItem()
-    {
-        return getItem;
-    }
-    
-    
     public void enterLocation(Location nextLocation)
     {
         currentLocation = nextLocation;
     }
     
-    public void nextItem(Item nextItem)
-    {
-        getItem = nextItem;
-    }
 }

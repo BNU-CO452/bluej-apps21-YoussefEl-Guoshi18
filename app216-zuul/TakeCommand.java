@@ -30,8 +30,23 @@ public class TakeCommand extends ZuulCommand
             System.out.println("Take what?");
             return;
         }
+        
 
         Map map = zuul.MAP;
+        Player player = zuul.player;
+        Item items = map.getCurrentLocation().getItem(item);
+        
+        if(map.getCurrentLocation().fetchItem().contains(item))
+        {
+            System.out.println( items.getName() + " is added into your inventory!");
+            map.getCurrentLocation().removeItem(item);
+            System.out.println(map.getCurrentLocation().getLongDescription());
+            player.addItem(items);
+        }
+        else
+        {
+         System.out.println( "That item doesn't exist!");   
+        }
         // remove the item from the current room
         // and add it to the player's inventory
         // Print out a suitable message.

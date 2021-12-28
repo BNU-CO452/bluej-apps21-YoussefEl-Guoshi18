@@ -1,4 +1,4 @@
-
+import java.util.ArrayList; 
 /**
  * Write a description of class Player here.
  *
@@ -9,6 +9,7 @@ public class Player
 {
     private int health = 5;
     private int stamina = 15;
+    private ArrayList<Item> inventory;
 
     /**
      * Constructor for objects of class Player
@@ -17,6 +18,7 @@ public class Player
     {
         this.health = health;
         this.stamina = stamina;
+        inventory = new ArrayList<>();
     }
 
      public void decreaseHealth()
@@ -32,6 +34,11 @@ public class Player
     public int getStamina()
     {
         return stamina;
+    }
+    
+    public void addItem(Item item)
+    {
+        inventory.add(item);
     }
     
     public int getHealth()
