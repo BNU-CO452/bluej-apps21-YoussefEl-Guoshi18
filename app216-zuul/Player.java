@@ -9,7 +9,7 @@ public class Player
 {
     private int health = 5;
     private int stamina = 15;
-    private ArrayList<Item> inventory;
+    public ArrayList<Item> inventory;
 
     /**
      * Constructor for objects of class Player
