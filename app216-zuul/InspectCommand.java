@@ -48,6 +48,8 @@ public class InspectCommand extends ZuulCommand
         {
         System.out.println("Doesn't seem to be in your inventory, can't inspect it!");
         }
+        System.out.println();
+        System.out.println(map.getCurrentLocation().getLongDescription());
         
         // remove the item from the current room
         // and add it to the player's inventory

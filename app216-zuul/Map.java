@@ -17,7 +17,7 @@ public class Map
 {
     // Need to add a list of exits
     
-    private Location cabinet, buttery, bathroom, cellar, solar, bedchamber, chapel, treasureroom;
+    private Location cabinet, buttery, bathroom, lightcellar, solar,chapel, bedchamber, treasureroom;
     private Location currentLocation;
 
     /**
@@ -40,7 +40,6 @@ public class Map
         createButtery();
         createBathroom();
         createSolar();
-        createCellar();
         createBedchamber();
         createChapel();
         createTreasureroom();
@@ -64,7 +63,6 @@ public class Map
         bathroom = new Location("You enter the bathroom and you witness a spider coming out of those rusty taps.");
         bathroom.setExit("south", cabinet);
         cabinet.setExit("north", bathroom);
-        bathroom.setItem("torchlight" , new Item("torchlight", "A rusty torch which has not been touched in a while.", 1));
         bathroom.setItem("cellarkey" , new Item("cellarkey", "An abandoned key found on the floor.", 2));
         
     }
@@ -77,7 +75,7 @@ public class Map
         buttery = new Location("You enter the buttery and a reeking smell of rotten bread comes right into your nostrils.");
         buttery.setExit("north", cabinet);
         cabinet.setExit("south", buttery);
-        buttery.setItem("Steak", new Item("Steak", "A steak has been left for a while now, seems out of date would you like to give it a try?", 3));
+        buttery.setItem("steak", new Item("steak", "A steak has been left for a while now, seems out of date would you like to give it a try?", 3));
     }
     
     /**
@@ -85,7 +83,7 @@ public class Map
      */
     private void createSolar()
     {
-        solar = new Location("You enter the Solar room and you see recrudescence of insects under the chimney.");
+        solar = new Location("You enter the Solar room and you see recrudescence of insects under the chimney. The door to the cellar seems to be locked.");
         solar.setExit("west", cabinet);
         cabinet.setExit("east",solar);
         solar.setItem("redorb", new Item("redorb", "Nice, you found a shiny red Orb to unlock the treasure room!", 4));
@@ -95,12 +93,15 @@ public class Map
     /**
      * Create the lab and link it to the outside and office
      */
-    private void createCellar()
+    
+    public void createLightCellar()
     {
         // create the Locations
-        cellar = new Location("You enter the cellar, it's pitch black and if you have a useful item, it'll be easier to explore.");
-        cellar.setExit("south", solar);
-        solar.setExit("north", cellar);
+        lightcellar = new Location("using the torchlight you have, now you can see useful items");
+        lightcellar.setExit("south", solar);
+        solar.setExit("north", lightcellar);
+        lightcellar.setItem("clover2", new Item("clover2","Nice you found a clover!", 9));
+        lightcellar.setItem("blueorb", new Item("blueorb","GREAT, you found the blue orb.", 10));
         
     }
     
@@ -113,12 +114,13 @@ public class Map
         
     }
     
-        private void createChapel()
+     public void createChapel()
     {
         // create the Locations
         chapel = new Location("You enter the Chapel, all the seats are empty but you see a cross on the table. Maybe you can pray, who knows? Something good may happen to you.");
         chapel.setExit("west", solar);
         solar.setExit("east", chapel);
+        chapel.setItem("cross", new Item("cross","Lets see what you can retrieve.", 8));
         
     }
     
@@ -129,8 +131,10 @@ public class Map
         
         //treasureroom.setExit("west",chapel);
         chapel.setExit("east", treasureroom);
-        chapel.setItem("forbiddensword", new Item("forbiddensword", "Nice, it will be a good fight against the dragon!", 6));
-        chapel.setItem("goldensword", new Item("goldensword", "AMAZING! The battle with the dragon will be a slice of cake!", 7));
+
+         chapel.setItem("forbiddensword", new Item("forbiddensword", "Nice, it will be a good fight against the dragon!", 6));
+
+        //chapel.setItem("goldensword", new Item("goldensword", "AMAZING! The battle with the dragon will be a slice of cake!", 7));
         
     }
     

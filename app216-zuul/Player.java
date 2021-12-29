@@ -9,6 +9,7 @@ public class Player
 {
     private int health = 5;
     private int stamina = 15;
+    private int luck = 0;
     public ArrayList<Item> inventory;
 
     /**
@@ -26,6 +27,33 @@ public class Player
         health = health - 1;
     }
     
+    public int getLuck()
+    {
+        return luck;
+    }
+    
+    public Item findItem(String item)
+    {
+       for(Item items : inventory) 
+       {
+           if(items.getName().equals(item))
+           {
+               return items;
+           }
+       }
+       return null;
+    }
+    
+    public void increaseLuck()
+    {
+        luck = luck + 1;
+    }
+    
+     public void increaseHealth()
+    {
+        health = health + 1;
+    }
+    
      public void decreaseStamina()
     {
         stamina = stamina - 1;
@@ -36,9 +64,26 @@ public class Player
         return stamina;
     }
     
+    public boolean itemFound(String item)
+    {
+        for(Item items : inventory)
+        {
+            if(items.getName().equals(item))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    
     public void addItem(Item item)
     {
         inventory.add(item);
+    }
+    
+    public void removeItem(Item item)
+    {
+        inventory.remove(item);
     }
     
     public int getHealth()
