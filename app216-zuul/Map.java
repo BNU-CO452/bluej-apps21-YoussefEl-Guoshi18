@@ -120,7 +120,10 @@ public class Map
         chapel = new Location("You enter the Chapel, all the seats are empty but you see a cross on the table. Maybe you can pray, who knows? Something good may happen to you.");
         chapel.setExit("west", solar);
         solar.setExit("east", chapel);
-        chapel.setItem("cross", new Item("cross","Lets see what you can retrieve.", 8));
+
+         chapel.setItem("forbiddensword", new Item("forbiddensword", "Nice, it will be a good fight against the dragon!", 6));
+        
+        
         
     }
     
@@ -131,8 +134,6 @@ public class Map
         
         //treasureroom.setExit("west",chapel);
         chapel.setExit("east", treasureroom);
-
-        chapel.setItem("forbiddensword", new Item("forbiddensword", "Nice, it will be a good fight against the dragon!", 6));
 
         //chapel.setItem("goldensword", new Item("goldensword", "AMAZING! The battle with the dragon will be a slice of cake!", 7));
         

@@ -47,24 +47,6 @@ public class UseCommand extends ZuulCommand
           System.out.println(map.getCurrentLocation().getLongDescription());
           player.removeItems(item);
         }
-        else if(items.getName().equals("clover"))
-        {
-          player.increaseLuck();
-          System.out.println("Your luck increased!");
-          player.removeItems(item);
-        }
-        else if(items.getName().equals("clover2"))
-        {
-          player.increaseLuck();
-          System.out.println("Your luck increased!");
-          player.removeItems(item);
-        }
-        else if(items.getName().equals("cross"))
-        { 
-          System.out.println("Looks like it spawned a forbidden sword.");
-          System.out.println(map.getCurrentLocation().getLongDescription());
-          player.removeItems(item);
-        }
 
         }
         // remove the item from the current room

@@ -23,6 +23,7 @@ public class Player
     {
         this.health = health;
         this.stamina = stamina;
+        this.luck = luck;
         inventory = new ArrayList<>();
         inventorys = new HashMap<>();
     }
