@@ -33,7 +33,10 @@ public class GoCommand extends ZuulCommand
         Location currentLocation = map.getCurrentLocation();
         Location nextLocation = currentLocation.getExit(direction);
 
-        
+    if(player.treasureUnlocked())
+     {
+       map.createTreasureroom();
+     }  
         
      if(player.getStamina() != 0)
      {
@@ -47,7 +50,7 @@ public class GoCommand extends ZuulCommand
             map.enterLocation(nextLocation);
             System.out.println(map.getCurrentLocation().getLongDescription());
             player.decreaseStamina();
-            System.out.println("You now have " + player.getStamina() + " stamina left.");
+            System.out.println("You now have " + player.getStamina() + " stamina and " + player.getHealth());
         }
     }
      else

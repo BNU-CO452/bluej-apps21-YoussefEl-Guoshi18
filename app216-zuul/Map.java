@@ -42,7 +42,6 @@ public class Map
         createSolar();
         createBedchamber();
         createChapel();
-        createTreasureroom();
         currentLocation = cabinet;// start game outside
     }
     
@@ -111,6 +110,7 @@ public class Map
         bedchamber = new Location("You enter the bed chamber, seeing rats tearing mattress off from the bed.");
         bedchamber.setExit("north", solar);
         solar.setExit("south", bedchamber);
+        bedchamber.setItem("greenorb", new Item("greenorb","GREAT, you found the green orb.", 11));
         
     }
     
@@ -124,7 +124,7 @@ public class Map
         
     }
     
-     private void createTreasureroom()
+     public void createTreasureroom()
     {
         // create the Locations
         treasureroom = new Location("You enter the treasure room, ITS TIME to fight off the dragon! Also there is no turning back now!");
@@ -132,7 +132,7 @@ public class Map
         //treasureroom.setExit("west",chapel);
         chapel.setExit("east", treasureroom);
 
-         chapel.setItem("forbiddensword", new Item("forbiddensword", "Nice, it will be a good fight against the dragon!", 6));
+        chapel.setItem("forbiddensword", new Item("forbiddensword", "Nice, it will be a good fight against the dragon!", 6));
 
         //chapel.setItem("goldensword", new Item("goldensword", "AMAZING! The battle with the dragon will be a slice of cake!", 7));
         

@@ -21,15 +21,12 @@ public class InventoryCommand extends ZuulCommand
     public void execute()
     {
 
-        System.out.println(" This is what you current have: ");
+       
         System.out.println();
         
-        Player player = zuul.player;
+        Player player = zuul.player; 
         
-        for(Item items : player.inventory)
-        {
-            System.out.println(items.getName() + "\n");                        
-        }   
+        System.out.println(player.getItemString());
         
     }
 }

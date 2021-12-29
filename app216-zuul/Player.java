@@ -1,4 +1,7 @@
 import java.util.ArrayList; 
+import java.util.HashMap;
+import java.util.Set;
+import java.util.Iterator;
 /**
  * Write a description of class Player here.
  *
@@ -11,6 +14,7 @@ public class Player
     private int stamina = 15;
     private int luck = 0;
     public ArrayList<Item> inventory;
+    public HashMap<String, Item> inventorys;
 
     /**
      * Constructor for objects of class Player
@@ -20,6 +24,7 @@ public class Player
         this.health = health;
         this.stamina = stamina;
         inventory = new ArrayList<>();
+        inventorys = new HashMap<>();
     }
 
      public void decreaseHealth()
@@ -64,18 +69,6 @@ public class Player
         return stamina;
     }
     
-    public boolean itemFound(String item)
-    {
-        for(Item items : inventory)
-        {
-            if(items.getName().equals(item))
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-    
     public void addItem(Item item)
     {
         inventory.add(item);
@@ -89,5 +82,47 @@ public class Player
     public int getHealth()
     {
         return health;
+    }
+    
+    public void setItem(String name, Item item)
+    {
+        inventorys.put(name, item);
+    }
+    
+    public Item removeItems(String item)
+    {
+        return inventorys.remove(item);
+    }
+    
+    public Item getItem(String item) 
+    {
+        return inventorys.get(item);
+    }
+    
+    public boolean treasureUnlocked()
+    {
+        String returnString = " Inventory:";
+        Set<String> keys = inventorys.keySet();
+        for(String item : keys)
+        {
+            returnString += " " + item;
+        }
+        if(returnString.contains("greenorb") && returnString.contains("redorb") && returnString.contains("blueorb"))
+        {
+            return true;
+        }
+        return false;
+    }
+    
+    public String getItemString()
+    {
+        String returnString = " Inventory:";
+        Set<String> keys = inventorys.keySet();
+        
+        for(String item : keys) 
+        {
+            returnString += " " + item;
+        }
+        return returnString;
     }
 }

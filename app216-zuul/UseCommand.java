@@ -32,34 +32,40 @@ public class UseCommand extends ZuulCommand
         
         Map map = zuul.MAP;
         Player player = zuul.player;
-        Item items = player.findItem(item);
+        Item items = player.getItem(item);
         
         if(items.getName().equals("steak"))
         {
             player.increaseHealth();
             System.out.println("Nice! Your HP increased!");
+            player.removeItems(item);
         }
         else if(items.getName().equals("cellarkey"))
         {
           map.createLightCellar();
           System.out.println("Cellar room unlocked!");
           System.out.println(map.getCurrentLocation().getLongDescription());
+          player.removeItems(item);
         }
         else if(items.getName().equals("clover"))
         {
           player.increaseLuck();
           System.out.println("Your luck increased!");
+          player.removeItems(item);
         }
         else if(items.getName().equals("clover2"))
         {
           player.increaseLuck();
           System.out.println("Your luck increased!");
+          player.removeItems(item);
         }
         else if(items.getName().equals("cross"))
         { 
           System.out.println("Looks like it spawned a forbidden sword.");
           System.out.println(map.getCurrentLocation().getLongDescription());
+          player.removeItems(item);
         }
+
         }
         // remove the item from the current room
         // and add it to the player's inventory

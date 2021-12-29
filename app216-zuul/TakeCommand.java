@@ -39,6 +39,7 @@ public class TakeCommand extends ZuulCommand
         if(map.getCurrentLocation().fetchItem().contains(item))
         {
             System.out.println( items.getName() + " is added into your inventory!");
+            player.setItem(item, items);
             map.getCurrentLocation().removeItem(item);
             System.out.println(map.getCurrentLocation().getLongDescription());
             player.addItem(items);
