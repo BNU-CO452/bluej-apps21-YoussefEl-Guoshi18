@@ -13,6 +13,7 @@ public class Player
     private int health = 5;
     private int stamina = 15;
     private int luck = 0;
+    private int damage = 1;
     public ArrayList<Item> inventory;
     public HashMap<String, Item> inventorys;
 
@@ -24,6 +25,7 @@ public class Player
         this.health = health;
         this.stamina = stamina;
         this.luck = luck;
+        this.damage = damage;
         inventory = new ArrayList<>();
         inventorys = new HashMap<>();
     }
@@ -31,6 +33,16 @@ public class Player
      public void decreaseHealth()
     {
         health = health - 1;
+    }
+    
+    public void setDamage(int set)
+    {
+        damage = set;
+    }
+    
+    public int getDamage()
+    {
+        return damage;
     }
     
     public int getLuck()
@@ -55,12 +67,17 @@ public class Player
         luck = luck + 1;
     }
     
-     public void increaseHealth()
+    public void increaseHealth(int amount)
     {
-        health = health + 1;
+        health = health + amount;
     }
     
-     public void decreaseStamina()
+        public void decreaseHealth(int amount)
+    {
+        health = health - amount;
+    }
+    
+    public void decreaseStamina()
     {
         stamina = stamina - 1;
     }

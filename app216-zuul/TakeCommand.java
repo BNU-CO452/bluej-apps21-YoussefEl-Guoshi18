@@ -35,8 +35,11 @@ public class TakeCommand extends ZuulCommand
         Map map = zuul.MAP;
         Player player = zuul.player;
         Item items = map.getCurrentLocation().getItem(item);
-        
-        if(map.getCurrentLocation().fetchItem().contains(item))
+        if(item == null)
+        {
+          System.out.println("Item doesn't exist!");  
+        }
+        else if(map.getCurrentLocation().fetchItem().contains(item))
         {
             System.out.println( items.getName() + " is added into your inventory!");
             player.setItem(item, items);

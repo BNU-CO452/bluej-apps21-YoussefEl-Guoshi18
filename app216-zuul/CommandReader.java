@@ -81,6 +81,11 @@ public class CommandReader
             InspectCommand inspect = new InspectCommand(game, word2);
             inspect.execute();
         }
+        else if(commandWord.equals(CommandWords.BATTLE.word))
+        {
+            BattleCommand battle = new BattleCommand(game);
+            battle.execute();
+        }
         else if(commandWord.equals(CommandWords.USE.word))
         {
             UseCommand use = new UseCommand(game, word2);
@@ -102,7 +107,7 @@ public class CommandReader
         }
         else if (game.player.getStamina() == 0)
         {
-            return true;
+            //return true;
         }// Return false means the game is not over
         return false;
     }

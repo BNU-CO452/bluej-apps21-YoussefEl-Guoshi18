@@ -14,7 +14,8 @@ public enum CommandWords
     INVENTORY("inventory", "List the item the player obtained"),
     QUIT ("quit", "End the game"),
     INSPECT ("inspect", "looks at the detail of the item"),
-    USE ("use","can use the item to increase the player's stats");
+    USE ("use","can use the item to increase the player's stats"),
+    BATTLE("battle","fighting the dragon");
     
     public final String word;
     public final String description;

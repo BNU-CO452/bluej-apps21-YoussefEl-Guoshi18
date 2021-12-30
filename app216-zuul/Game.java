@@ -21,6 +21,7 @@ public class Game
     public final Map MAP;
     private CommandReader reader;
     public Player player;
+    public Enemy enemy;
     private boolean gameOver;
         
     /**
@@ -31,6 +32,7 @@ public class Game
         MAP = new Map();
         reader = new CommandReader(this);
         player = new Player();
+        enemy = new Enemy();
     }
 
     /**
@@ -44,14 +46,22 @@ public class Game
         // Enter the main command loop.  Here we repeatedly 
         // read commands and execute them until the game is over.
                 
-        while (! gameOver) 
+        while (! gameOver && enemy.getHealth() > 0 && player.getHealth() > 0) 
         {
-            gameOver = reader.getCommand();
+          gameOver = reader.getCommand();
         }
         
-        if(gameOver && player.getStamina() == 1)
+        if(player.getStamina() == 1)
         {
-        System.out.println("Seems like you tired yourself out, you'll now rot in this dungeon, goodbye for now.");
+         System.out.println("Seems like you tired yourself out, you'll now rot in this dungeon, goodbye for now.");
+        }
+        else if(enemy.getHealth() <= 0)
+        {
+         System.out.println("YOU WIN! The treasure is all yours!");
+        }
+        else if(player.getHealth() <= 0)
+        {
+         System.out.println("Unlucky! You got slained by the dragon!"); 
         }
     }
 

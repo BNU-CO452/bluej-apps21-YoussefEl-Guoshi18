@@ -10,16 +10,14 @@ public class Item
     // instance variables - replace the example below with your own
     String name;
     String description;
-    int id;
 
     /**
      * Constructor for objects of class Item
      */
-    public Item(String name, String description, int id)
+    public Item(String name, String description)
     {
       this.name = name;
       this.description = description;
-      this.id = id;
     }
 
     public String getName()
@@ -32,10 +30,7 @@ public class Item
         return description;
     }
     
-    public int getId()
-    {
-        return id;
-    }
+
     
     public void getShortDescription()
     {
