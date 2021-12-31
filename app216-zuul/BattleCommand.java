@@ -1,10 +1,11 @@
 import java.util.Scanner;
 import java.util.Random;
 /**
- * Write a description of class HelpCommand here.
+ * BattleCommand will allow the user to make the choice in a random scenario pick the right choice their player has the
+ * advantage, the player needs to set the dragon's health to zero in order to win the game.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Youssef El-Guoshi
+ * @version 31/12/2021
  */
 public class BattleCommand extends ZuulCommand
 {
@@ -17,11 +18,11 @@ public class BattleCommand extends ZuulCommand
             reader = new Scanner(System.in);
         }
         
-        /**
-         * Print out some help information.
-         * Here we print some stupid, cryptic message and
-         * a list of the command words.
-         */
+    /**
+     * It firstly checks to see if the player is in the treasureroom before the battle start the int "random" will have value 1-7 which will give the 
+     * player random scenarios, if the the player or dragon's health is NOT at zero it'll keep looping until either the dragon or the player
+     * is dead. There is a switch statement depending on the user's response which makes the player have the advantage or not.
+     */
     public void execute()
     {
         Map map = zuul.MAP;
@@ -198,6 +199,10 @@ public class BattleCommand extends ZuulCommand
             System.out.println(map.getCurrentLocation().getLongDescription());
         }
     }
+    
+    /**
+     * Fetches the users input.
+     */
     public String getString()
     {
         String inputLine = "";

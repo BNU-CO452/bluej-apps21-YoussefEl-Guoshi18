@@ -13,8 +13,8 @@ import java.util.ArrayList;
  * the known commands, and if the input is not one of the known commands, it
  * returns a command object that is marked as an unknown command.
  *
- * @author  Michael Kölling and David J. Barnes
- * @version 2016.02.29
+ * @author  Youssef El-Guoshi
+ * @version 31/12/2021
  */
 public class CommandReader
 {
@@ -30,9 +30,10 @@ public class CommandReader
          this.game = game;
          reader = new Scanner(System.in);
       }
-      /**
-       * @return The next command from the user.
-       */
+      
+   /**
+   * @return The next command from the user.
+   */
    public boolean getCommand()
    {
       String inputLine;
@@ -52,6 +53,11 @@ public class CommandReader
       }
       return executeCommand();
    }
+   
+   /**
+    * The user uses a specific command such as go, inspect, use, etc. And it creates the object of that command and gets executed
+    * in the class the user typed in.
+    */
    private boolean executeCommand()
    {
       if(commandWord.equals(CommandWords.GO.word))
@@ -97,10 +103,7 @@ public class CommandReader
       {
          return true; // game over
       }
-      else if(game.player.getStamina() == 0)
-      {
-         //return true;
-      } // Return false means the game is not over
+      // Return false means the game is not over
       return false;
    }
 }

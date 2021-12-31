@@ -1,11 +1,8 @@
 /**
- * This command allows the player to
- * take or pickup an item from a room
- * and carry it around to use somewhere
- * else
+ * The UseCommand allows the player to the user the item in their inventory, which can boost the player's status or even unlock a new location.
  *
- * @author Derek Peacock & Nicholas Day
- * @version 2021-08-23
+ * @author Youssef El-Guoshi
+ * @version 31/12/2021
  */
 public class UseCommand extends ZuulCommand
 {
@@ -15,10 +12,15 @@ public class UseCommand extends ZuulCommand
      * to the player's inventory.
      */
     public UseCommand(Game zuul, String item)
-    {
-        super(zuul);
-        this.item = item;
-    }
+       {
+           super(zuul);
+           this.item = item;
+       }
+       
+    /**
+     * Checks if the item is in the inventory, if it is then they can boost the player's status, spawn items, etc. Or if not,
+     * prints out an invalid message.
+     */   
     public void execute()
         {
             if(item == null)
@@ -117,7 +119,5 @@ public class UseCommand extends ZuulCommand
                 System.out.println("Never heard of that item.");
             }
         }
-        // remove the item from the current room
-        // and add it to the player's inventory
-        // Print out a suitable message.
+
 }

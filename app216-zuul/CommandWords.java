@@ -1,10 +1,9 @@
-
 /**
  * This contains all the possible command words
  * for the game of Zuul
  *
- * @author Derek Peacock & Nicholas Day
- * @version 25-08-2021
+ * @author Youssef El-Guoshi
+ * @version 31/12/2021
  */
 public enum CommandWords
 {
@@ -20,6 +19,9 @@ public enum CommandWords
     public final String word;
     public final String description;
     
+    /**
+     * Contructor for CommandWords that uses two String value: word and description.
+     */
     CommandWords(String word, String description)
     {
         this.word = word;

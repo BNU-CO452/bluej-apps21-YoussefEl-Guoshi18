@@ -10,10 +10,10 @@
  *  This main class creates and initialises all the others: it creates all
  *  locations, creates the CommandReader and starts the game.
  *
- * @author  Michael Kölling and David J. Barnes
- * @version 2016.02.29
+ * @author  Youssef El-Guoshi
+ * @version 31/12/2021
  *
- * Modified and extended by Student Name
+ * Modified and extended by Youssef El-Guoshi
  */
 public class Game
 {
@@ -34,7 +34,8 @@ public class Game
         }
         
         /**
-         *  Main play routine.  Loops until end of play.
+         *  Main play routine.  Loops until end of play. The player wins the game by getting the dragon health to zero or the player loses if their
+         *  health is set to zero.
          */
     public void play()
         {
@@ -68,6 +69,7 @@ public class Game
         System.out.println();
         System.out.println(" Welcome to the World of Zuul!");
         System.out.println(" World of Zuul is a new, incredibly boring adventure game.");
+        System.out.println(" Your goal is to slay the Dragon and take the treasure, try not to die!");
         System.out.println(" Type 'help' if you need help.");
         System.out.println("Your player currently has " + player.getStamina() + " stamina and " + player.getHealth() + " health.");
         System.out.println();

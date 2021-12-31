@@ -3,8 +3,8 @@
  * one location to another location provided the
  * two locations are linked by a valid exit
  *
- * @author Derek Peacock & Nicholas Day
- * @version 2021-08-23
+ * @author Youssef El-Guoshi
+ * @version 31/12/2021
  */
 public class GoCommand extends ZuulCommand
 {
@@ -15,6 +15,10 @@ public class GoCommand extends ZuulCommand
         this.direction = direction;
     }
     
+    /**
+     * This allows the player to move from one location to the other if the user gives a valid response, if there an empty string or an invalid
+     * String then the method will print out a invalid message to the user.
+     */
     public void execute()
     {
         if(direction == null)

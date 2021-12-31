@@ -1,11 +1,9 @@
 /**
- * This command allows the player to
- * take or pickup an item from a room
- * and carry it around to use somewhere
- * else
- *
- * @author Derek Peacock & Nicholas Day
- * @version 2021-08-23
+ * InspectCommand allows the player to look at the description of the item they currently have, but cannot look for other items that
+ * is not in the player's inventory.
+ * 
+ * @author Youssef El-Guoshi
+ * @version 31/21/2021
  */
 public class InspectCommand extends ZuulCommand
 {
@@ -20,6 +18,10 @@ public class InspectCommand extends ZuulCommand
         this.item = item;
     }
     
+    /**
+     * Checks to see if the item is in the player's inventory. If not, then prints out an invalid to the user 
+     * else fetches the description of the item.
+     */
     public void execute()
     {
         if(item == null)

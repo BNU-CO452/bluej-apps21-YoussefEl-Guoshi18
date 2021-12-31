@@ -11,16 +11,16 @@ import java.util.Iterator;
  * connected to other locations via exits.  For each existing exit, the
  * location stores a reference to the neighboring locations.
  *
- * @author  Michael Kölling and David J. Barnes
- * Modified by Derek Peacock & Nicholas Day
- * @version 2016.02.29
+ * @author  Youssef El-Guoshi
+ * Modified by Youssef El-Guoshi
+ * @version 31/12/2021
  */
 public class Location
 {
     private String description;
-    private HashMap < String, Location > exits; // stores exits of this room.   
+    private HashMap <String, Location> exits; // stores exits of this room.   
     private Item item;
-    private HashMap < String, Item > items;
+    private HashMap <String, Item> items;
     /**
      * Create a location described "description". Initially, it has
      * no exits. "description" is something like "a kitchen" or
@@ -29,49 +29,58 @@ public class Location
     public Location(String description)
         {
             this.description = description;
-            exits = new HashMap < > ();
-            items = new HashMap < > ();
+            exits = new HashMap <>();
+            items = new HashMap <>();
         }
-        /**
-         * Define an exit from this room.
-         * @param direction The direction of the exit.
-         * @param neighbor  The room to which the exit leads.
-         */
+        
+    /**
+    * Define an exit from this room.
+    * @param direction The direction of the exit.
+    * @param neighbor  The room to which the exit leads.
+    */
     public void setExit(String direction, Location neighbor)
        {
            exits.put(direction, neighbor);
        }
     
+    /**
+     * Sets the item, @param name is the name of the item
+     * @param item is the object "Item" which is created from the item class.
+     */
     public void setItem(String name, Item item)
         {
             this.item = item;
             items.put(name, item);
         }
         
-        /**
-         * @return The short description of the room
-         * (the one that was defined in the constructor).
-         */
+    /**
+    * @return The short description of the room
+    * (the one that was defined in the constructor).
+    */
     public String getShortDescription()
         {
             return description;
         }
         
-        /**
-         * Return a description of the room in the form:
-         *     You are in the kitchen.
-         *     Exits: north west
-         * @return A long description of this room
-         */
+    /**
+    * Return a description of the room in the form:
+    *     You are in the kitchen.
+    *     Exits: north west
+    * @return A long description of this room
+    */
     public String getLongDescription()
        {
            return " You are " + description + "\n" + getExitString() + "\n" + getItemString();
        }
     
+    /**
+     * It returns the method getItemString()
+     */
     public String fetchItem()
        {
            return getItemString();
        }
+       
         /**
          * Return a string describing the locations's exits,
          * for example "Exits: north west".
@@ -86,6 +95,10 @@ public class Location
            }
            return returnString;
        }
+       
+    /**
+     * Returns the string of the item that is avaliable in the location.
+     */
     private String getItemString()
         {
             String returnString = " Items avaliable:";
@@ -107,12 +120,18 @@ public class Location
        {
            return exits.get(direction);
        }
-    
+       
+    /**
+     * Using the Hashmap, it fetches the key(String) to access the Item.
+     */
     public Item getItem(String item)
        {  
            return items.get(item);
        }
     
+    /**
+     * Remove the Item from the Hashmap so it isn't displayed again in the location.
+     */
     public Item removeItem(String item)
        {
            return items.remove(item);

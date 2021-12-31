@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 /**
- * Write a description of class HelpCommand here.
+ * The InventoryCommand will print out the item the player is currently have in their inventory.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Youssef El-Guoshi
+ * @version 31/12/2021
  */
 public class InventoryCommand extends ZuulCommand
 {
@@ -11,11 +11,9 @@ public class InventoryCommand extends ZuulCommand
         {
             super(zuul);
         }
-        /**
-         * Print out some help information.
-         * Here we print some stupid, cryptic message and
-         * a list of the command words.
-         */
+    /**
+    * Prints out the item that the player currently has.
+    */
     public void execute()
     {
         System.out.println();

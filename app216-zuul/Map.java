@@ -10,7 +10,7 @@
  *   [Buttery]      [Bathroom]
  *
  * @author Youssef El-Guoshi
- * @version 07/12/2021
+ * @version 31/12/2021
  */
 public class Map
 {
@@ -27,12 +27,12 @@ public class Map
             createLocations();
         }
         
-        /**
-         * Create all the Locations and link their exits together.
-         * Set the current location to the outside.
-         * Both locations need to have been created before
-         * their exists are linked.
-         */
+    /**
+    * Create all the Locations and link their exits together.
+    * Set the current location to the cabinet.
+    * Both locations need to have been created before
+    * their exists are linked.
+    */
     private void createLocations()
         {
             createCabinet();
@@ -41,21 +41,20 @@ public class Map
             createSolar();
             createBedchamber();
             createChapel();
-            currentLocation = cabinet; // start game outside
+            currentLocation = cabinet; // start game in the cabinet.
         }
         
-        /**
-         * Create the outside and link it to the
-         * theatre, lab and pub
-         */
+    /**
+    * Create the cabinet including its description as @param
+    */
     private void createCabinet()
         {
             cabinet = new Location("You enter the cabinet, you see rodents gushing out of the forbidden shelfs.");
         }
         
-        /**
-         * Create the pub and link it to the outside
-         */
+    /**
+    * Create the bathroom and also setting the exits that link this location to the cabinet and also contains the item "cellarkey".
+    */
     private void createBathroom()
         {
             bathroom = new Location("You enter the bathroom and you witness a spider coming out of those rusty taps.");
@@ -64,9 +63,9 @@ public class Map
             bathroom.setItem("cellarkey", new Item("cellarkey", "An abandoned key found on the floor."));
         }
         
-        /**
-         * Create the theatre linked to the outside
-         */
+    /**
+    * Create the Buttery linked to the cabinet and set the room to have item "steak" and "clover".
+    */
     private void createButtery()
         {
             buttery = new Location("You enter the buttery and a reeking smell of rotten bread comes right into your nostrils.");
@@ -76,9 +75,9 @@ public class Map
             buttery.setItem("clover", new Item("clover", "You found a clover, hopefully its useful later."));
         }
         
-        /**
-         * Create the office linked to the lab
-         */
+    /**
+    * Create the solar linked to the cabinet, and created a clover and the redorb to the treasureroom.
+    */
     private void createSolar()
         {
             solar = new Location("You enter the Solar room and you see recrudescence of insects under the chimney. The door to the cellar seems to be locked.");
@@ -88,9 +87,9 @@ public class Map
             solar.setItem("clover2", new Item("clover2", "A clover hopefully its more useful soon!"));
         }
         
-        /**
-         * Create the lab and link it to the outside and office
-         */
+    /**
+    * Create the cellar and link it to the Solar and create items "clover" and "blueorb".
+    */
     public void createLightCellar()
        {
            // create the Locations
@@ -101,6 +100,9 @@ public class Map
            lightcellar.setItem("blueorb", new Item("blueorb", "GREAT, you found the blue orb."));
        }
        
+    /**
+     * Create the BedChamber that links with the Solar and create the item "greenorb".
+     */   
     private void createBedchamber()
        {
            // create the Locations
@@ -109,7 +111,10 @@ public class Map
            solar.setExit("south", bedchamber);
            bedchamber.setItem("greenorb", new Item("greenorb", "GREAT, you found the green orb."));
        }
-       
+    
+    /**
+     * Create the Chapel and links to the Solar room and creates a cross that can spawn items when used.
+     */
     public void createChapel()
        {
            // create the Locations
@@ -118,7 +123,10 @@ public class Map
            solar.setExit("east", chapel);
            chapel.setItem("cross", new Item("cross", "lets see what you can retrieve!"));
        }
-       
+    
+    /**
+     * Create the room that links with Chapel and can fight with the dragon.
+     */
     public void createTreasureroom()
        {
            // create the Locations
@@ -128,11 +136,17 @@ public class Map
            chapel.setExit("east", treasureroom);
        }
        
+    /**
+     * Fetch the currentlocation that the player is currently at.
+     */
     public Location getCurrentLocation()
        {
            return currentLocation;
        }
        
+    /**
+     * Allows the player to enter one location to the other.
+     */
     public void enterLocation(Location nextLocation)
        {
            currentLocation = nextLocation;

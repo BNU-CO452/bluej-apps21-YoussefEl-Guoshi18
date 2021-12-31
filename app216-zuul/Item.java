@@ -1,8 +1,8 @@
 /**
- * Write a description of class Item here.
+ * The Item class contains the name and description and has getter method to fetch value. 
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Youssef El-Guoshi
+ * @version 31/12/2021
  */
 public class Item
 {
@@ -18,23 +18,28 @@ public class Item
         this.description = description;
     }
     
+    /**
+     * Gets the name of the object.
+     */
     public String getName()
     {
         return name;
     }
     
+    /**
+     * Gets the description of the object.
+     */
     public String getDescription()
     {
         return description;
     }
     
+    /**
+     * Prints the name of the object.
+     */
     public void getShortDescription()
     {
         System.out.println(name);
     }
     
-    public void getLongDescription()
-    {
-        System.out.println(name);
-    }
 }
