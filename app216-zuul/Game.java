@@ -1,73 +1,68 @@
 /**
- *  This class is the main class of the "World of Zuul" application. 
- *  "World of Zuul" is a very simple, text based adventure game.  Users 
- *  can walk around some scenery. That's all. It should really be extended 
+ *  This class is the main class of the "World of Zuul" application.
+ *  "World of Zuul" is a very simple, text based adventure game.  Users
+ *  can walk around some scenery. That's all. It should really be extended
  *  to make it more interesting!
- * 
+ *
  *  To play this game, create an instance of this class and call the "play"
  *  method.
- * 
+ *
  *  This main class creates and initialises all the others: it creates all
- *  locations, creates the CommandReader and starts the game.  
- * 
+ *  locations, creates the CommandReader and starts the game.
+ *
  * @author  Michael Kölling and David J. Barnes
  * @version 2016.02.29
- * 
+ *
  * Modified and extended by Student Name
  */
-
-public class Game 
+public class Game
 {
     public final Map MAP;
     private CommandReader reader;
     public Player player;
     public Enemy enemy;
     private boolean gameOver;
-        
     /**
      * Create the game and initialise its internal map.
      */
-    public Game() 
-    {
-        MAP = new Map();
-        reader = new CommandReader(this);
-        player = new Player();
-        enemy = new Enemy();
-    }
-
-    /**
-     *  Main play routine.  Loops until end of play.
-     */
-    public void play() 
-    {            
-        printWelcome();
-        gameOver = false;
-
-        // Enter the main command loop.  Here we repeatedly 
-        // read commands and execute them until the game is over.
-                
-        while (! gameOver && enemy.getHealth() > 0 && player.getHealth() > 0) 
+    public Game()
         {
-          gameOver = reader.getCommand();
+            MAP = new Map();
+            reader = new CommandReader(this);
+            player = new Player();
+            enemy = new Enemy();
         }
         
-        if(player.getStamina() == 1)
+        /**
+         *  Main play routine.  Loops until end of play.
+         */
+    public void play()
         {
-         System.out.println("Seems like you tired yourself out, you'll now rot in this dungeon, goodbye for now.");
+            printWelcome();
+            gameOver = false;
+            // Enter the main command loop.  Here we repeatedly 
+            // read commands and execute them until the game is over.
+            while(!gameOver && enemy.getHealth() > 0 && player.getHealth() > 0)
+            {
+                gameOver = reader.getCommand();
+            }
+            if(player.getStamina() == 1)
+            {
+                System.out.println("Seems like you tired yourself out, you'll now rot in this dungeon, goodbye for now.");
+            }
+            else if(enemy.getHealth() <= 0)
+            {
+                System.out.println("YOU WIN! The treasure is all yours!");
+            }
+            else if(player.getHealth() <= 0)
+            {
+                System.out.println("Unlucky! You got slained by the dragon!");
+            }
         }
-        else if(enemy.getHealth() <= 0)
-        {
-         System.out.println("YOU WIN! The treasure is all yours!");
-        }
-        else if(player.getHealth() <= 0)
-        {
-         System.out.println("Unlucky! You got slained by the dragon!"); 
-        }
-    }
-
-    /**
-     * Print out the opening message for the player.
-     */
+        
+        /**
+         * Print out the opening message for the player.
+         */
     private void printWelcome()
     {
         System.out.println();

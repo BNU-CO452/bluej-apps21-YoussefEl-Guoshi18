@@ -1,4 +1,3 @@
-
 /**
  * Write a description of class Item here.
  *
@@ -10,16 +9,15 @@ public class Item
     // instance variables - replace the example below with your own
     String name;
     String description;
-
     /**
      * Constructor for objects of class Item
      */
     public Item(String name, String description)
     {
-      this.name = name;
-      this.description = description;
+        this.name = name;
+        this.description = description;
     }
-
+    
     public String getName()
     {
         return name;
@@ -29,8 +27,6 @@ public class Item
     {
         return description;
     }
-    
-
     
     public void getShortDescription()
     {

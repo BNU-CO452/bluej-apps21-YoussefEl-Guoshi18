@@ -1,4 +1,3 @@
-
 /**
  * This command transfers the player from
  * one location to another location provided the
@@ -10,53 +9,46 @@
 public class GoCommand extends ZuulCommand
 {
     String direction;
-    
     public GoCommand(Game zuul, String direction)
     {
         super(zuul);
         this.direction = direction;
-    }    
-
+    }
+    
     public void execute()
     {
-        if(direction == null) 
+        if(direction == null)
         {
             // if there is no second word, we don't know where to go...
             System.out.println("Go where?");
             return;
         }
-
         Map map = zuul.MAP;
         Player player = zuul.player;
-        
         // Try to leave current room.
-        
         Location currentLocation = map.getCurrentLocation();
         Location nextLocation = currentLocation.getExit(direction);
-
-    if(player.treasureUnlocked())
-     {
-       map.createTreasureroom();
-     }  
-        
-     if(player.getStamina() != 0)
-     {
-     
-        if (nextLocation == null) 
+        if(player.treasureUnlocked())
         {
-            System.out.println("There is no exit in this direction!");
+            map.createTreasureroom();
         }
-        else 
+        if(player.getStamina() != 0)
         {
-            map.enterLocation(nextLocation);
-            System.out.println(map.getCurrentLocation().getLongDescription());
-            player.decreaseStamina();
-            System.out.println("You now have " + player.getStamina() + " stamina , " + player.getHealth() + " health and " + player.getLuck() + " luck.");
+            if(nextLocation == null)
+            {
+                System.out.println("There is no exit in this direction!");
+            }
+            else
+            {
+                map.enterLocation(nextLocation);
+                System.out.println(map.getCurrentLocation().getLongDescription());
+                player.decreaseStamina();
+                System.out.println("You now have " + player.getStamina() + " stamina , " + player.getHealth() + " health and " + player.getLuck() + " luck.");
+            }
         }
-    }
-     else
-     {
-     System.out.println("Oh no seems like you ran out of stamina!");
-     }
+        else
+        {
+            System.out.println("Oh no seems like you ran out of stamina!");
+        }
     }
 }

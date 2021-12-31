@@ -1,4 +1,4 @@
-import java.util.ArrayList; 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.Iterator;
@@ -14,9 +14,8 @@ public class Player
     private int stamina = 15;
     private int luck = 0;
     private int damage = 1;
-    public ArrayList<Item> inventory;
-    public HashMap<String, Item> inventorys;
-
+    public ArrayList < Item > inventory;
+    public HashMap < String, Item > inventorys;
     /**
      * Constructor for objects of class Player
      */
@@ -26,11 +25,11 @@ public class Player
         this.stamina = stamina;
         this.luck = luck;
         this.damage = damage;
-        inventory = new ArrayList<>();
-        inventorys = new HashMap<>();
+        inventory = new ArrayList < > ();
+        inventorys = new HashMap < > ();
     }
-
-     public void decreaseHealth()
+    
+    public void decreaseHealth()
     {
         health = health - 1;
     }
@@ -52,14 +51,14 @@ public class Player
     
     public Item findItem(String item)
     {
-       for(Item items : inventory) 
-       {
-           if(items.getName().equals(item))
-           {
-               return items;
-           }
-       }
-       return null;
+        for(Item items: inventory)
+        {
+            if(items.getName().equals(item))
+            {
+                return items;
+            }
+        }
+        return null;
     }
     
     public void increaseLuck()
@@ -72,7 +71,7 @@ public class Player
         health = health + amount;
     }
     
-        public void decreaseHealth(int amount)
+    public void decreaseHealth(int amount)
     {
         health = health - amount;
     }
@@ -112,7 +111,7 @@ public class Player
         return inventorys.remove(item);
     }
     
-    public Item getItem(String item) 
+    public Item getItem(String item)
     {
         return inventorys.get(item);
     }
@@ -120,8 +119,8 @@ public class Player
     public boolean treasureUnlocked()
     {
         String returnString = " Inventory:";
-        Set<String> keys = inventorys.keySet();
-        for(String item : keys)
+        Set < String > keys = inventorys.keySet();
+        for(String item: keys)
         {
             returnString += " " + item;
         }
@@ -131,13 +130,11 @@ public class Player
         }
         return false;
     }
-    
     public String getItemString()
     {
         String returnString = " Inventory:";
-        Set<String> keys = inventorys.keySet();
-        
-        for(String item : keys) 
+        Set < String > keys = inventorys.keySet();
+        for(String item: keys)
         {
             returnString += " " + item;
         }
