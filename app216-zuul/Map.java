@@ -80,7 +80,7 @@ public class Map
     */
     private void createSolar()
         {
-            solar = new Location("You enter the Solar room and you see recrudescence of insects under the chimney. The door to the cellar seems to be locked.");
+            solar = new Location("You enter the Solar room and you see recrudescence of insects under the chimney. The door to the cellar seems to be locked from the North.");
             solar.setExit("west", cabinet);
             cabinet.setExit("east", solar);
             solar.setItem("redorb", new Item("redorb", "Nice, you found a shiny red Orb to unlock the treasure room!"));
