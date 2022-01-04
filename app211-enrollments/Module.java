@@ -11,7 +11,6 @@ public class Module
     // instance variables - replace the example below with your own
     private String code;
     private String title;
-    private Module module;
     private int credit;
 
     /**
