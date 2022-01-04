@@ -41,17 +41,17 @@ public class BattleCommand extends ZuulCommand
                     switch(getString())
                     {
                         case "attack":
-                            System.out.println("You decided to charge at the dragon which caused you to lose HP!");
+                            System.out.println("You decided to charge at the dragon which caused you to lose 2 HP!");
                             player.decreaseHealth(2);
                             System.out.println("Health: " + player.getHealth() + " , " + "Damage: " + player.getDamage() + " : " + " Dragon's health: " + enemy.getHealth());
                             break;
                         case "dodge":
-                            System.out.println("Great choice! The dragon smash its head against the wall.");
+                            System.out.println("Great choice! The dragon smash its head against the wall and took 2 damage");
                             enemy.decreaseHealth(2);
                             System.out.println("Health: " + player.getHealth() + " , " + "Damage: " + player.getDamage() + " : " + " Dragon's health: " + enemy.getHealth());
                             break;
                         default:
-                            System.out.println("Invalid response, you take damage anyway.");
+                            System.out.println("Invalid response, you take 2 damage anyway.");
                             player.decreaseHealth(2);
                             System.out.println("Health: " + player.getHealth() + " , " + "Damage: " + player.getDamage() + " : " + " Dragon's health: " + enemy.getHealth());
                     }
@@ -64,7 +64,7 @@ public class BattleCommand extends ZuulCommand
                     switch(getString())
                     {
                         case "wait":
-                            System.out.println("You missed your chances! But you regained a little health");
+                            System.out.println("You missed your chance, but you regained a 2 HP!");
                             player.increaseHealth(2);
                             System.out.println("Health: " + player.getHealth() + " , " + "Damage: " + player.getDamage() + " : " + " Dragon's health: " + enemy.getHealth());
                             break;
@@ -74,7 +74,7 @@ public class BattleCommand extends ZuulCommand
                             System.out.println("Health: " + player.getHealth() + " , " + "Damage: " + player.getDamage() + " : " + " Dragon's health: " + enemy.getHealth());
                             break;
                         default:
-                            System.out.println("Invalid response, you take damage anyway.");
+                            System.out.println("Invalid response, you take  2 damage anyway.");
                             player.decreaseHealth(2);
                             System.out.println("Health: " + player.getHealth() + " , " + "Damage: " + player.getDamage() + " : " + " Dragon's health: " + enemy.getHealth());
                     }
@@ -87,17 +87,17 @@ public class BattleCommand extends ZuulCommand
                     switch(getString())
                     {
                         case "slide":
-                            System.out.println("Nice choice! The dragon hurt itself against the wall.");
+                            System.out.println("Nice choice! The dragon hurt itself against the wall taking 2 damage!");
                             enemy.decreaseHealth(2);
                             System.out.println("Health: " + player.getHealth() + " , " + "Damage: " + player.getDamage() + " : " + " Dragon's health: " + enemy.getHealth());
                             break;
                         case "jump":
-                            System.out.println("Good job! You jumped right into the dragon lost HP.");
+                            System.out.println("Good job! You jumped right into the dragon lost 2 HP!");
                             player.decreaseHealth(3);
                             System.out.println("Health: " + player.getHealth() + " , " + "Damage: " + player.getDamage() + " : " + " Dragon's health: " + enemy.getHealth());
                             break;
                         default:
-                            System.out.println("Invalid response, you take damage anyway.");
+                            System.out.println("Invalid response, you take 2 damage anyway.");
                             player.decreaseHealth(2);
                             System.out.println("Health: " + player.getHealth() + " , " + "Damage: " + player.getDamage() + " : " + " Dragon's health: " + enemy.getHealth());
                     }
@@ -110,24 +110,24 @@ public class BattleCommand extends ZuulCommand
                     switch(getString())
                     {
                         case "jump":
-                            System.out.println("Nice choice! The dragon hurt itself against the wall.");
+                            System.out.println("Nice choice! The dragon hurt itself against the wall taking 2 damage");
                             enemy.decreaseHealth(2);
                             System.out.println("Health: " + player.getHealth() + " , " + "Damage: " + player.getDamage() + " : " + " Dragon's health: " + enemy.getHealth());
                             break;
                         case "silde":
-                            System.out.println("Good job! You slid right into the dragon lost HP.");
+                            System.out.println("Good job! You slid right into the dragon 3 HP.");
                             player.decreaseHealth(3);
                             System.out.println("Health: " + player.getHealth() + " , " + "Damage: " + player.getDamage() + " : " + " Dragon's health: " + enemy.getHealth());
                             break;
                         default:
-                            System.out.println("Invalid response, you take damage anyway.");
+                            System.out.println("Invalid response, you take  2 damage anyway.");
                             player.decreaseHealth(2);
                             System.out.println("Health: " + player.getHealth() + " , " + "Damage: " + player.getDamage() + " : " + " Dragon's health: " + enemy.getHealth());
                     }
                 }
                 if(randoms == 5)
                 {
-                    System.out.println("The dragon is tired.");
+                    System.out.println("The dragon is tired. What you going to do: ");
                     System.out.println("Attack");
                     System.out.println("Wait");
                     switch(getString())
@@ -138,12 +138,13 @@ public class BattleCommand extends ZuulCommand
                             System.out.println("Health: " + player.getHealth() + " , " + "Damage: " + player.getDamage() + " : " + " Dragon's health: " + enemy.getHealth());
                             break;
                         case "wait":
-                            System.out.println("You decided to wait for the dragon to get up, but you regained health!");
+                            System.out.println("You decided to wait for the dragon to get up, but you regained  2 HP!");
                             player.increaseHealth(2);
                             System.out.println("Health: " + player.getHealth() + " , " + "Damage: " + player.getDamage() + " : " + " Dragon's health: " + enemy.getHealth());
                             break;
                         default:
-                            System.out.println("ok");
+                            System.out.println("ok you take 2 damage anyway");
+                            player.decreaseHealth(2);
                             System.out.println("Health: " + player.getHealth() + " , " + "Damage: " + player.getDamage() + " : " + " Dragon's health: " + enemy.getHealth());
                     }
                 }
@@ -155,7 +156,7 @@ public class BattleCommand extends ZuulCommand
                     switch(getString())
                     {
                         case "left":
-                            System.out.println("Terrible choice! You took damage from the fire!");
+                            System.out.println("Terrible choice! You took 5 damage from the fire!");
                             player.decreaseHealth(5);
                             System.out.println("Health: " + player.getHealth() + " , " + "Damage: " + player.getDamage() + " : " + " Dragon's health: " + enemy.getHealth());
                             break;
@@ -164,7 +165,7 @@ public class BattleCommand extends ZuulCommand
                             System.out.println("Health: " + player.getHealth() + " , " + "Damage: " + player.getDamage() + " : " + " Dragon's health: " + enemy.getHealth());
                             break;
                         default:
-                            System.out.println("Invalid response, you take damage anyway.");
+                            System.out.println("Invalid response, you take 5 damage anyway.");
                             player.decreaseHealth(5);
                             System.out.println("Health: " + player.getHealth() + " , " + "Damage: " + player.getDamage() + " : " + " Dragon's health: " + enemy.getHealth());
                     }
@@ -181,12 +182,12 @@ public class BattleCommand extends ZuulCommand
                             System.out.println("Health: " + player.getHealth() + " , " + "Damage: " + player.getDamage() + " : " + " Dragon's health: " + enemy.getHealth());
                             break;
                         case "right":
-                            System.out.println("Terrible choice! You took damage from the fire!");
+                            System.out.println("Terrible choice! You took 5 damage from the fire!");
                             player.decreaseHealth(5);
                             System.out.println("Health: " + player.getHealth() + " , " + "Damage: " + player.getDamage() + " : " + " Dragon's health: " + enemy.getHealth());
                             break;
                         default:
-                            System.out.println("Invalid response, you take damage anyway.");
+                            System.out.println("Invalid response, you take 5 damage anyway.");
                             player.decreaseHealth(5);
                             System.out.println("Health: " + player.getHealth() + " , " + "Damage: " + player.getDamage() + " : " + " Dragon's health: " + enemy.getHealth());
                     }
