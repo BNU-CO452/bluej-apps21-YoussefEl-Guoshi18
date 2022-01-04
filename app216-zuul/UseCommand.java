@@ -42,6 +42,7 @@ public class UseCommand extends ZuulCommand
                 player.increaseHealth(1);
                 System.out.println("Nice! Your HP increased!");
                 player.removeItems(item);
+                System.out.println("You now have " + player.getStamina() + " stamina , " + player.getHealth() + " health and " + player.getLuck() + " luck.");
             }
             else if(items.getName().equals("cellarkey"))
             {
